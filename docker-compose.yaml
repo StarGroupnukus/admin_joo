@@ -1,0 +1,114 @@
+services:
+  app:
+    build:
+      dockerfile: ./docker-build/app/Dockerfile
+      context: ./
+    ports:
+      - "8000:8000"
+    depends_on:
+      pg:
+        condition: service_healthy
+    volumes:
+      - ./src:/src
+      - ./src/.env:/src/.env
+      - ./src/certs:/src/certs
+      - ./src/alembic:/src/alembic
+      - ./src/alembic.ini:/src/alembic.ini
+      - /etc/localtime:/etc/localtime:ro
+#    command:
+#      - python
+#      - run_main.py
+    # develop:
+    #   watch:
+    #     - action: sync+restart
+    #       path: ./src
+    #       target: /src
+    #     - action: rebuild
+    #       path: ./poetry.lock
+
+  pg:
+    image: postgres:16.4
+    env_file:
+      - ./src/.env
+    # ports:
+    #   - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./src/.env:/src/.env
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  redis:
+    image: redis:alpine
+    env_file:
+      - ./src/.env
+    volumes:
+      - redis-data:/data
+      - ./src/.env:/src/.env
+      - /etc/localtime:/etc/localtime:ro
+    # ports:
+    #   - "6379:6379"
+    healthcheck:
+      test: [ "CMD-SHELL", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  adminer:
+    image: adminer
+    environment:
+      - ADMINER_DEFAULT_SERVER=pg
+      - ADMINER_DESIGN=dracula
+    ports:
+      - "8432:8080"
+    depends_on:
+      pg:
+        condition: service_healthy
+
+  worker:
+    build:
+      context: ./
+      dockerfile: ./docker-build/app/Dockerfile
+    command: arq app.core.worker.settings.WorkerSettings
+    env_file:
+      - ./src/.env
+    depends_on:
+      pg:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./src/.env:/src/.env
+      - ./src/app:/src/app
+      - /etc/localtime:/etc/localtime:ro
+
+  init_scripts:
+    build:
+      context: ./
+      dockerfile: ./docker-build/app/Dockerfile
+    env_file:
+      - ./src/.env
+    depends_on:
+      pg:
+        condition: service_healthy
+      app:
+        condition: service_started
+
+    volumes:
+      - ./src:/src
+      - ./src/.env:/src/.env
+      - ./src/certs:/src/certs:ro
+
+    command: >
+      sh -c "
+        python -m src.scripts.create_first_superuser
+        python -m src.scripts.create_first_tier
+      "
+
+volumes:
+  pgdata:
+  redis-data:
