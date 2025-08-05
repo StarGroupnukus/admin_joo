@@ -4,7 +4,7 @@ services:
       dockerfile: ./docker-build/app/Dockerfile
       context: ./
     ports:
-      - "8013:8000"
+      - "127.0.0.1:8013:8000"
     depends_on:
       pg:
         condition: service_healthy
@@ -69,7 +69,7 @@ services:
       - ADMINER_DEFAULT_SERVER=pg
       - ADMINER_DESIGN=dracula
     ports:
-      - "8432:8080"
+      - "127.0.0.1:8432:8080"
     depends_on:
       pg:
         condition: service_healthy
@@ -95,33 +95,33 @@ services:
     networks:
       - admin_joo
         
-  init_scripts:
-    build:
-      context: ./
-      dockerfile: ./docker-build/app/Dockerfile
-    env_file:
-      - ./src/.env
-    depends_on:
-      pg:
-        condition: service_healthy
-      app:
-        condition: service_started
+  # init_scripts:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker-build/app/Dockerfile
+  #   env_file:
+  #     - ./src/.env
+  #   depends_on:
+  #     pg:
+  #       condition: service_healthy
+  #     app:
+  #       condition: service_started
 
-    volumes:
-      - ./src:/src
-      - ./src/.env:/src/.env
-      - ./src/certs:/src/certs:ro
+  #   volumes:
+  #     - ./src:/src
+  #     - ./src/.env:/src/.env
+  #     - ./src/certs:/src/certs:ro
 
-    command: >
-      sh -c "
-        python -m scripts.create_first_superuser
-        python -m scripts.create_first_tier
-        python -m scripts.create_roles
-        python -m scripts.create_departments
-        python -m scripts.create_persons
-      "
-    networks:
-      - admin_joo
+  #   command: >
+  #     sh -c "
+  #       python -m scripts.create_first_superuser
+  #       python -m scripts.create_first_tier
+  #       python -m scripts.create_roles
+  #       python -m scripts.create_departments
+  #       python -m scripts.create_persons
+  #     "
+  #   networks:
+  #     - admin_joo
 
 volumes:
   pgdata:
