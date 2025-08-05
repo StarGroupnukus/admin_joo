@@ -27,21 +27,26 @@ async def create_department(
     )
 
 @router.get(
-    'get_all',
+    '/get_all',
     response_model=PaginatedListResponse[DepartmentRead],
 )
 async def get_departments(
+    role_id: int | None = None,
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1),
     session=TransactionSessionDep,
 ):
     db_departments_count = await DepartmentDAO.count(
         session=session,
-        filters=DepartmentFilter(),
+        filters=DepartmentFilter(
+            role_id=role_id,
+        ),
     )
     db_departments = await DepartmentDAO.paginate(
         session=session,
-        filters=DepartmentFilter(),
+        filters=DepartmentFilter(
+            role_id=role_id,
+        ),
         page=page,
         page_size=page_size,
         order_by="id",

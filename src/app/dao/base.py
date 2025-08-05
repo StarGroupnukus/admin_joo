@@ -229,8 +229,9 @@ class BaseDAO(Generic[T]):
 
     @classmethod
     async def count(cls, session: AsyncSession, filters: BaseModel):
+        print(filters)
         # Подсчитать количество записей
-        filter_dict = filters.model_dump(exclude_unset=True)
+        filter_dict = filters.model_dump(exclude_none=True)
         logger.info(
             f"Подсчет количества записей {cls.model.__name__} по фильтру: {filter_dict}"
         )
@@ -255,7 +256,7 @@ class BaseDAO(Generic[T]):
         order_direction: str = "desc",
     ):
         # Пагинация записей
-        filter_dict = filters.model_dump(exclude_unset=True) if filters else {}
+        filter_dict = filters.model_dump(exclude_none=True) if filters else {}
         logger.info(
             f"Пагинация записей {cls.model.__name__} по фильтру: {filter_dict}, страница: {page}, размер страницы: {page_size}"
         )

@@ -5,10 +5,14 @@ from app.dao.department import DepartmentDAO
 from app.schemas.person import PersonCreate, PersonRead, PersonFullRead
 from app.core.config import settings
 from app.schemas import DataResponse
-from fastapi import status
+from fastapi import status, Query
 from fastapi import File, Form, UploadFile
 from app.core.exceptions import NotFoundException
+from app.schemas.person import PersonFilter
+from app.schemas import PaginatedListResponse, get_pagination
 import os
+import uuid
+
 router = APIRouter(
     prefix=settings.api.v1.persons,
     tags=["Persons"],
@@ -33,7 +37,7 @@ async def create_person(
         )
 
     os.makedirs("storage/persons", exist_ok=True)
-    save_path = f"storage/persons/{image.filename}"
+    save_path = f"storage/persons/{uuid.uuid4()}.{image.filename.split(".")[-1]}"
     with open(save_path, "wb") as buffer:
         buffer.write(await image.read())
 
@@ -50,7 +54,7 @@ async def create_person(
     return DataResponse(data=PersonRead.model_validate(person))
 
 @router.get(
-    "/{person_id}",
+    "/get_by_id/{person_id}",
     response_model=DataResponse[PersonFullRead],
 )
 async def get_person_by_id(
@@ -60,3 +64,40 @@ async def get_person_by_id(
     person = await PersonDAO.get_person_by_id(session=session, person_id=person_id)
     return DataResponse(data=person)
     
+@router.get(
+    "/get_all",
+    response_model=PaginatedListResponse[PersonRead],
+)
+async def get_persons(
+    role_id: int | None = None,
+    department_id: int | None = None,
+    page: int = Query(1, ge=1),
+    page_size: int = Query(10, ge=1),
+    session=TransactionSessionDep,
+):
+    db_persons_count = await PersonDAO.count(
+        session=session,
+        filters=PersonFilter(
+            role_id=role_id,
+            department_id=department_id,
+        ),
+    )
+    db_persons = await PersonDAO.paginate(
+        session=session,
+        filters=PersonFilter(
+            role_id=role_id,
+            department_id=department_id,
+        ),
+        page=page,
+        page_size=page_size,
+        order_by="id",
+        order_direction="desc",
+    )
+    return PaginatedListResponse(
+        data=db_persons,
+        pagination=get_pagination(
+            total_count=db_persons_count,
+            page=page,
+            page_size=page_size,
+        ),
+    )
