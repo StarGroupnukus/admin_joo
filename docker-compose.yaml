@@ -25,6 +25,8 @@ services:
     #       target: /src
     #     - action: rebuild
     #       path: ./poetry.lock
+    networks:
+      - admin_joo
 
   pg:
     image: postgres:16.4
@@ -41,7 +43,8 @@ services:
       interval: 5s
       timeout: 3s
       retries: 3
-
+    networks:
+      - admin_joo
   redis:
     image: redis:alpine
     env_file:
@@ -57,6 +60,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - admin_joo
 
   adminer:
     image: adminer
@@ -68,6 +73,8 @@ services:
     depends_on:
       pg:
         condition: service_healthy
+    networks:
+      - admin_joo
 
   worker:
     build:
@@ -85,7 +92,9 @@ services:
       - ./src/.env:/src/.env
       - ./src/app:/src/app
       - /etc/localtime:/etc/localtime:ro
-
+    networks:
+      - admin_joo
+        
   init_scripts:
     build:
       context: ./
@@ -111,7 +120,13 @@ services:
         python -m src.scripts.create_departments
         python -m src.scripts.create_persons
       "
+    networks:
+      - admin_joo
 
 volumes:
   pgdata:
   redis-data:
+
+networks:
+  admin_joo:
+    driver: bridge
