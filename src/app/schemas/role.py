@@ -9,16 +9,21 @@ class RoleCreate(RoleBase):
     pass
 
 
+class RoleCreateInternal(RoleBase):
+    id: int
+
+
 class RoleUpdate(RoleBase):
     pass
 
+
 class RoleFilter(RoleBase):
-    id : int | None = None
-    name : str | None = None
-    
+    id: int | None = None
+    name: str | None = None
+
+
 class RoleRead(RoleBase):
     id: int
-
 
     class Config:
         from_attributes = True
