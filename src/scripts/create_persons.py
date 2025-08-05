@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import SOURCE_DIR
 from app.core.db import db_helper
 from app.dao.person import PersonDAO
-from app.schemas.person import PersonCreate
+from app.schemas.person import PersonCreate, PersonFilter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -18,7 +18,10 @@ async def create_persons(session: AsyncSession) -> None:
         PERSONS_JSON_PATH = f"{SOURCE_DIR}/data/persons.json"
         with open(PERSONS_JSON_PATH, encoding="utf-8") as file:
             people = json.load(file)
-        people_count = await PersonDAO.count(session=session)
+        people_count = await PersonDAO.count(
+            session=session,
+            filters=PersonFilter(),
+        )
         if people_count > 0:
             logger.info("People already exist.")
             return

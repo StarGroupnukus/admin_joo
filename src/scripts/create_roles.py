@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import SOURCE_DIR
 from app.core.db import db_helper
 from app.dao.role import RoleDAO
-from app.schemas.role import RoleCreateInternal
+from app.schemas.role import RoleCreateInternal, RoleFilter
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -18,7 +18,10 @@ async def create_roles(session: AsyncSession) -> None:
         ROLES_JSON_PATH = f"{SOURCE_DIR}/data/roles.json"
         with open(ROLES_JSON_PATH, encoding="utf-8") as file:
             roles = json.load(file)
-        roles_count = await RoleDAO.count(session=session)
+        roles_count = await RoleDAO.count(
+            session=session,
+            filters=RoleFilter(),
+        )
         if roles_count > 0:
             logger.info("Roles already exist.")
             return
