@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from app.core.db import TransactionSessionDep
 from app.dao.person import PersonDAO
 from app.dao.department import DepartmentDAO
-from app.schemas.person import PersonCreate, PersonRead, PersonFullRead
+from app.schemas.person import PersonCreate, PersonRead, PersonFullRead, PersonExcel
 from app.core.config import settings
 from app.schemas import DataResponse
 from fastapi import status, Query
@@ -11,7 +11,9 @@ from app.core.exceptions import NotFoundException
 from app.schemas.person import PersonFilter
 from app.schemas import PaginatedListResponse, get_pagination
 import os
+from app.core.utils.create_zip import create_zip
 import uuid
+
 
 router = APIRouter(
     prefix=settings.api.v1.persons,
@@ -101,3 +103,14 @@ async def get_persons(
             page_size=page_size,
         ),
     )
+
+@router.get(
+    "/get_excel",
+    #response_model=DataResponse[List[PersonExcel]],
+)
+async def get_persons_excel(
+    session=TransactionSessionDep,
+):
+    persons = await PersonDAO.get_persons_excel(session=session)
+    path = await create_zip(persons_data=persons)
+    return path

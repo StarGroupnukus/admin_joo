@@ -23,6 +23,8 @@ uvloop = "^0.21.0"
 httpx = "^0.28.1"
 psycopg2-binary = "^2.9.10"
 python-multipart = "^0.0.20"
+pandas = "^2.3.1"
+openpyxl = "^3.1.5"
 
 [tool.poetry.group.dev.dependencies]
 black = "^25.1.0"

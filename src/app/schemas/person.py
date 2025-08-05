@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 from app.schemas.department import DepartmentRead
 from app.schemas.role import RoleRead
+from datetime import datetime
 
 class PersonBase(BaseModel):
     first_name: str
@@ -37,4 +38,12 @@ class PersonFullRead(BaseModel):
     image_url: str
     department: DepartmentRead
     role: RoleRead
-    
+
+class PersonExcel(BaseModel):
+    id: int
+    first_name: str
+    last_name: str
+    image_url: str
+    department: str
+    created_at: str
+    extented_at: str
