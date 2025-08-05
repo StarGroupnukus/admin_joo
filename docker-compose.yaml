@@ -4,7 +4,7 @@ services:
       dockerfile: ./docker-build/app/Dockerfile
       context: ./
     ports:
-      - "8000:8000"
+      - "8013:8000"
     depends_on:
       pg:
         condition: service_healthy
@@ -114,11 +114,11 @@ services:
 
     command: >
       sh -c "
-        python -m src.scripts.create_first_superuser
-        python -m src.scripts.create_first_tier
-        python -m src.scripts.create_roles
-        python -m src.scripts.create_departments
-        python -m src.scripts.create_persons
+        python -m scripts.create_first_superuser
+        python -m scripts.create_first_tier
+        python -m scripts.create_roles
+        python -m scripts.create_departments
+        python -m scripts.create_persons
       "
     networks:
       - admin_joo
