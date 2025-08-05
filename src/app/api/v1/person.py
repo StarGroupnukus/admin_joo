@@ -2,7 +2,7 @@ from fastapi import APIRouter
 from app.core.db import TransactionSessionDep
 from app.dao.person import PersonDAO
 from app.dao.department import DepartmentDAO
-from app.schemas.person import PersonCreate, PersonRead, PersonFullRead, PersonExcel
+from app.schemas.person import PersonCreate, PersonRead, PersonFullRead, PersonExcel, PersonUpdate
 from app.core.config import settings
 from app.schemas import DataResponse
 from fastapi import status, Query
@@ -105,3 +105,63 @@ async def get_persons_excel(
     persons = await PersonDAO.get_persons_excel(session=session)
     path = await create_zip(persons_data=persons)
     return path
+
+@router.delete(
+    "/delete/{person_id}",
+    status_code=status.HTTP_200_OK,
+    response_model=DataResponse[int],
+)
+async def delete_person(
+    person_id: int,
+    session=TransactionSessionDep,
+):
+    db_person = await PersonDAO.find_one_or_none_by_id(
+        session=session,
+        data_id=person_id,
+    )
+    if db_person is None:
+        raise NotFoundException(
+            message="Person not found",
+        )
+    os.remove(db_person.image_url)
+    await PersonDAO.delete(
+        session=session,
+        filters=PersonFilter(
+            id=person_id,
+        ),
+    )
+
+    return DataResponse(data=person_id)
+
+@router.put(
+    "/update/{person_id}",
+    status_code=status.HTTP_200_OK,
+    response_model=DataResponse[PersonRead],
+)
+async def update_person(
+    person_id: int,
+    update_data: PersonUpdate,
+    session=TransactionSessionDep,
+):
+    db_person = await PersonDAO.find_one_or_none_by_id(
+        session=session,
+        data_id=person_id,
+    )
+    if db_person is None:
+        raise NotFoundException(
+            message="Person not found",
+        )
+        
+    await PersonDAO.update(
+        session=session,
+        filters=PersonFilter(
+            id=person_id,
+        ),
+        values=update_data,
+    )
+    updated_person = await PersonDAO.find_one_or_none_by_id(
+        session=session,
+        data_id=person_id,
+    )
+    return DataResponse(data=updated_person)
+    

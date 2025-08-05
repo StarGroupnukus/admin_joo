@@ -7,7 +7,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from app.core.config import SOURCE_DIR
 from app.core.db import db_helper
 from app.dao.person import PersonDAO
-from app.schemas.person import PersonCreate, PersonFilter
+from app.schemas.person import PersonFilter, PersonImport
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -28,12 +28,12 @@ async def create_persons(session: AsyncSession) -> None:
         for person in people:
             await PersonDAO.add(
                 session=session,
-                values=PersonCreate(
+                values=PersonImport(
+                    id=person["person_id"],
                     first_name=person["first_name"],
                     last_name=person["last_name"],
-                    image_url=person["image"],
-                    department_id=person["department_id"],
-                    role_id=person["role_id"],
+                    image_url=f'storage/persons/{person["image"].split("/")[-1]}',
+                    department_id=person["department_id"]
                 ),
             )
 

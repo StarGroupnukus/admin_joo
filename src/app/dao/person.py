@@ -27,7 +27,7 @@ class PersonDAO(BaseDAO):
                 r.name AS role_name
             FROM persons p
             JOIN departments d ON p.department_id = d.id
-            JOIN roles r ON p.role_id = r.id
+            JOIN roles r ON d.role_id = r.id
             WHERE p.id = :person_id
         """)
         result = await session.execute(query, {"person_id": person_id})
@@ -58,7 +58,7 @@ class PersonDAO(BaseDAO):
                 p.created_at AS created_at
             FROM persons p
             JOIN departments d ON p.department_id = d.id
-            JOIN roles r ON p.role_id = r.id
+            JOIN roles r ON d.role_id = r.id
             """
         )
         result = await session.execute(query)
