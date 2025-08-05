@@ -1,0 +1,200 @@
+[
+    {
+        "id": 1,
+        "uuid": 1,
+        "name": "Kadrlar bolimi",
+        "role_id": 1
+    },
+    {
+        "id": 2,
+        "uuid": 2,
+        "name": "Buxgalteriya",
+        "role_id": 1
+    },
+    {
+        "id": 3,
+        "uuid": 3,
+        "name": "Kancelariya ham arxiv bolimi",
+        "role_id": 1
+    },
+    {
+        "id": 4,
+        "uuid": 4,
+        "name": "Xalqaraliq baylanislar bolimi",
+        "role_id": 1
+    },
+    {
+        "id": 5,
+        "uuid": 5,
+        "name": "Jipekshilik",
+        "role_id": 2
+    },
+    {
+        "id": 6,
+        "uuid": 6,
+        "name": "Ósimliklerdi qorǵaw hám karantini kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 7,
+        "uuid": 7,
+        "name": "Agroximiya hám topıraqtanıw",
+        "role_id": 2
+    },
+    {
+        "id": 8,
+        "uuid": 8,
+        "name": "Diyxanshılıq, awıl xojalıq eginleri selekciyası hám tuxımgershilik kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 9,
+        "uuid": 9,
+        "name": "Xabar texnologiyaları, matematika, fizika hám ximiya kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 10,
+        "uuid": 10,
+        "name": "Ósimlikshilik, toǵayshılıq hám hám landshaftlı dizain kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 11,
+        "uuid": 11,
+        "name": "Awıl xojalıǵı ónimlerin saqlaw, dárilik ósimliklerdi jetistiriw hám qayta islew texnologiyası kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 12,
+        "uuid": 12,
+        "name": "Balıqshılıq kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 13,
+        "uuid": 13,
+        "name": "Zooinjeneriya hám veterinariya kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 14,
+        "uuid": 14,
+        "name": "Agrobiznes hám buxgalteriya esabı kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 15,
+        "uuid": 15,
+        "name": "Awıl xojalıǵın mexanizaciyalastırıw kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 16,
+        "uuid": 16,
+        "name": "Adminstrativlik basqarıw xızmetkerleri",
+        "role_id": 1
+    },
+    {
+        "id": 17,
+        "uuid": 17,
+        "name": "Ilimiy-izertewler, innovaciyalar hám ilimiy-pedagog kadrlar tayarlaw bólimi",
+        "role_id": 1
+    },
+    {
+        "id": 18,
+        "uuid": 18,
+        "name": "Jaslar máseleleri hám ruwxıylıq-aǵartıwshılıq isleri boyınsha bólimi",
+        "role_id": 1
+    },
+    {
+        "id": 19,
+        "uuid": 19,
+        "name": "Korrupciyaǵa qarsı gúresiw «komplaens-qadaǵalaw» sistemasın basqarıw bólimi",
+        "role_id": 1
+    },
+    {
+        "id": 20,
+        "uuid": 20,
+        "name": "Texnik paydalanıw hám xojalıq bólimi",
+        "role_id": 1
+    },
+    {
+        "id": 21,
+        "uuid": 21,
+        "name": "Fizikalıq hám yuridikalıq shaxslardıń múráájátleri menen islesiw, qadaǵalaw hám monitoring bólimi",
+        "role_id": 1
+    },
+    {
+        "id": 22,
+        "uuid": 22,
+        "name": "Sanlı tálim texnologiyaları orayı",
+        "role_id": 1
+    },
+    {
+        "id": 23,
+        "uuid": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "name": "Studentlerdi turaq jay menen támiyinlew jumısların muwapıqlastırıw  bólimi",
+        "role_id": 1
+    },
+    {
+        "id": 24,
+        "uuid": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "name": "Doktarantlar",
+        "role_id": 2
+    },
+    {
+        "id": 25,
+        "uuid": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "name": "Gumanitar pánler hám tiller kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 26,
+        "uuid": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "name": "Suw xojalıǵı hám jerden paydalanıw kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 27,
+        "uuid": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "name": "Registrator ofis",
+        "role_id": 1
+    },
+    {
+        "id": 28,
+        "uuid": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "name": "Miyue-baubaksha hám palızshılıq kafedrası",
+        "role_id": 2
+    },
+    {
+        "id": 29,
+        "uuid": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "name": "Oqiw-metodikaliq basqarma",
+        "role_id": 1
+    },
+    {
+        "id": 30,
+        "uuid": "4fda59e8-3fa6-486f-a10a-10dc26029c4d",
+        "name": "Bilim-sapasin qadagalaw",
+        "role_id": 1
+    },
+    {
+        "id": 31,
+        "uuid": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "name": "Malimleme-resurs orayı",
+        "role_id": 1
+    },
+    {
+        "id": 32,
+        "uuid": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "name": "Labarantlar ham jardemshiler",
+        "role_id": 1
+    },
+    {
+        "id": 33,
+        "uuid": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "name": "Fakultet dekanatlari",
+        "role_id": 1
+    }
+]
