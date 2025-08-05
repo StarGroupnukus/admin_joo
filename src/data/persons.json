@@ -36,7 +36,7 @@
         "first_name": "Nodira",
         "last_name": "Uzakbayeva",
         "image": "person/image/Нодира_Узакбаева.jpg",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -76,7 +76,7 @@
         "first_name": "Baxitjan",
         "last_name": "Marxabaev",
         "image": "person/image/BAXITJANMARXABAEV_3866540312.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -136,7 +136,7 @@
         "first_name": "Lalaxan",
         "last_name": "Artikova",
         "image": "person/image/photo_2025-04-15_12-17-21.jpg",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -176,7 +176,7 @@
         "first_name": "Rano",
         "last_name": "Ibragimova",
         "image": "person/image/RanoIbragimova.jpg",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -206,7 +206,7 @@
         "first_name": "Minajatdin",
         "last_name": "Mambetov",
         "image": "person/image/MINAJATDINMAMBETOV_3862222221.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -336,7 +336,7 @@
         "first_name": "Palzira",
         "last_name": "Dlanova",
         "image": "person/image/PALZIRADLANOVA_3862012026.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -406,7 +406,7 @@
         "first_name": "Ziyada",
         "last_name": "Avezova",
         "image": "person/image/ZIYADAAVEZOVA_3861512001.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -416,7 +416,7 @@
         "first_name": "Rano",
         "last_name": "Usenova",
         "image": "person/image/RANOUSENOVA_3862212008.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -506,7 +506,7 @@
         "first_name": "Abat",
         "last_name": "Gulimbetov",
         "image": "person/image/ABATGULIMBETOV_3861122011.JPG",
-        "department_id": "4fda59e8-3fa6-486f-a10a-10dc26029c4d",
+        "department_id": 30,
         "role_id": 1
     },
     {
@@ -586,7 +586,7 @@
         "first_name": "Ajinyaz",
         "last_name": "Uteniyazov",
         "image": "person/image/AJINIYAZUTENIYAZOV__3689856908.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -626,7 +626,7 @@
         "first_name": "Shaxnoza",
         "last_name": "Ikmetullaeva",
         "image": "person/image/SHAXNOZAIKMETULLAEVA_3866332105.jpg",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -706,7 +706,7 @@
         "first_name": "Gulzada",
         "last_name": "Alewatdinova",
         "image": "person/image/Alewatdinova_Gulzada.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -716,7 +716,7 @@
         "first_name": "Gulistan",
         "last_name": "Matqurabaeva",
         "image": "person/image/Matqurabaeva_Gulistan.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -726,7 +726,7 @@
         "first_name": "Erkinbay",
         "last_name": "Tleubergenov",
         "image": "person/image/Tleubergenov_Erkinbay.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -776,7 +776,7 @@
         "first_name": "Ayshagul",
         "last_name": "Jaxsimuratova",
         "image": "person/image/AYSHAGULJAQSIMURATOVA_3862312015.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -816,7 +816,7 @@
         "first_name": "Raxat",
         "last_name": "Atamuratov",
         "image": "person/image/RAXATATAMURATOV_3862211048.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -856,7 +856,7 @@
         "first_name": "Marjangul",
         "last_name": "Dlekeeva",
         "image": "person/image/MARJANGULDLEKEEVA_3861111118.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -876,7 +876,7 @@
         "first_name": "Marat",
         "last_name": "Berdimuratov",
         "image": "person/image/MARATBERDIMURATOV_3861711004.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -906,7 +906,7 @@
         "first_name": "Aysultan",
         "last_name": "Naurizova",
         "image": "person/image/AYSULTANNAURIZOVA_3862012004.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -916,7 +916,7 @@
         "first_name": "Shaxnoza",
         "last_name": "Abdrasulieva",
         "image": "person/image/SHAXNOZAABDRASULIEVA_3862486507.JPG",
-        "department_id": "4fda59e8-3fa6-486f-a10a-10dc26029c4d",
+        "department_id": 30,
         "role_id": 1
     },
     {
@@ -936,7 +936,7 @@
         "first_name": "Zakir",
         "last_name": "Allaniyazov",
         "image": "person/image/ZAKIRALLANIYAZOV_3860911003.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -946,7 +946,7 @@
         "first_name": "Abadan",
         "last_name": "Reipova",
         "image": "person/image/ABADANREIPOVA_3861612005.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -956,7 +956,7 @@
         "first_name": "Aydos",
         "last_name": "Djarasov",
         "image": "person/image/AYDOSDJARASOV_3862411003.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -966,7 +966,7 @@
         "first_name": "Gauxar",
         "last_name": "Toreniyazova",
         "image": "person/image/GAUXARTORENIYAZOVA_3862212016.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -976,7 +976,7 @@
         "first_name": "Elimbet",
         "last_name": "Sultanov",
         "image": "person/image/ELIMBETSULTANOV_3862011009.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -986,7 +986,7 @@
         "first_name": "Toxtamis",
         "last_name": "Naurizov",
         "image": "person/image/TOXTAMISNAURIZOV_3862011007.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -996,7 +996,7 @@
         "first_name": "Maxset",
         "last_name": "Tursinov",
         "image": "person/image/MAXSETTURSINOV_3861111110.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -1026,7 +1026,7 @@
         "first_name": "Bayrambay",
         "last_name": "Jumashov",
         "image": "person/image/BAYRAMJUMASHEV_3861225873.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -1036,7 +1036,7 @@
         "first_name": "Bahadir",
         "last_name": "Bekimbetov",
         "image": "person/image/BAHADIRBEKIMBETOV_3861211002.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -1046,7 +1046,7 @@
         "first_name": "Miyras",
         "last_name": "Atamuratov",
         "image": "person/image/MIYRASATAMURATOV_3865984507.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -1076,7 +1076,7 @@
         "first_name": "Nasiba",
         "last_name": "Sayimbetova",
         "image": "person/image/NasibaSayimbetova.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -1086,7 +1086,7 @@
         "first_name": "Nurlibay",
         "last_name": "Orazbayov",
         "image": "person/image/NURLIBAYORAZBAEV_3862311032.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -1096,7 +1096,7 @@
         "first_name": "Saxipjamal",
         "last_name": "Menlimuratova",
         "image": "person/image/Menlimuratova_Saxipjamal.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1106,7 +1106,7 @@
         "first_name": "Raxat",
         "last_name": "Turimbetov",
         "image": "person/image/RAXATTURIMBETOV_3865961204.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -1126,7 +1126,7 @@
         "first_name": "Zulfira",
         "last_name": "Ajimuratova",
         "image": "person/image/ZULFIRAAJIMURATOVA_3862412019.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -1146,7 +1146,7 @@
         "first_name": "Islambek",
         "last_name": "Aytimov",
         "image": "person/image/ISLAMBEKAYTIMOV_3862011005.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -1206,7 +1206,7 @@
         "first_name": "Ariwxan",
         "last_name": "Ismaylova",
         "image": "person/image/ARIWXANISMAYLOVA_3862180113.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -1256,7 +1256,7 @@
         "first_name": "Ikram",
         "last_name": "Sulaymanov",
         "image": "person/image/IKRAMJANSULAYMANOV_3861111113_tJmstOr.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -1326,7 +1326,7 @@
         "first_name": "Piyshenbay",
         "last_name": "Seytmuratov",
         "image": "person/image/PIYSHENBAYSEYTMURATOV_3862211035.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -1336,7 +1336,7 @@
         "first_name": "Elbrus",
         "last_name": "Eshmuratov",
         "image": "person/image/ELBURSESHMURATOV_3861211003_91HTohv.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -1356,7 +1356,7 @@
         "first_name": "Zilixa",
         "last_name": "Toreeva",
         "image": "person/image/ZilixaTóreeva_Registrator_ofis.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -1366,7 +1366,7 @@
         "first_name": "Gulshat",
         "last_name": "Mirzamuratova",
         "image": "person/image/11111.jpg",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1376,7 +1376,7 @@
         "first_name": "Gauxar",
         "last_name": "Alliyarova",
         "image": "person/image/Гаухар_АРМ.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -1386,7 +1386,7 @@
         "first_name": "Miyrbek",
         "last_name": "Bekbergenov",
         "image": "person/image/Bekbergenov_Miyrbek.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1396,7 +1396,7 @@
         "first_name": "Maxbuba",
         "last_name": "Nuretdinova",
         "image": "person/image/Nuretdinova_Maxbuba.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1406,7 +1406,7 @@
         "first_name": "Baxtiyar",
         "last_name": "Xamidov",
         "image": "person/image/Xamidov_Baxtiyar.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1456,7 +1456,7 @@
         "first_name": "Gauxar",
         "last_name": "Sharapova",
         "image": "person/image/GauxarSharapova.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1466,7 +1466,7 @@
         "first_name": "Gulnara",
         "last_name": "Jarilqaganova",
         "image": "person/image/GulnaraJarilqaganova.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1476,7 +1476,7 @@
         "first_name": "Zumrad",
         "last_name": "Eshanova",
         "image": "person/image/ZumradEshanova.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1486,7 +1486,7 @@
         "first_name": "Mexriban",
         "last_name": "Mamutova",
         "image": "person/image/MexribanMamutova.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1496,7 +1496,7 @@
         "first_name": "Sarbinaz",
         "last_name": "Eshanova",
         "image": "person/image/SARBINAZESHANOVA_3865658595.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1506,7 +1506,7 @@
         "first_name": "Ziywarxan",
         "last_name": "Kurbanbaeva",
         "image": "person/image/ZIYWARKURBANBAEVA_3862312009.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1516,7 +1516,7 @@
         "first_name": "Axmaral",
         "last_name": "Ariqbaeva",
         "image": "person/image/AQMARALARIQBAEVA_3869521106.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1526,7 +1526,7 @@
         "first_name": "Gulzar",
         "last_name": "Nasirova",
         "image": "person/image/GULZARNASIROVA_3862564806.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1536,7 +1536,7 @@
         "first_name": "Gulchexra",
         "last_name": "Jabbarbergenova",
         "image": "person/image/GULCHEXRAJABBARBERGENOVA_3866751202.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -1546,7 +1546,7 @@
         "first_name": "Gulshad",
         "last_name": "Maulenova",
         "image": "person/image/GULSHADMAULENOVA_3866742401.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -1556,7 +1556,7 @@
         "first_name": "Rametulla",
         "last_name": "Ubaydullaev",
         "image": "person/image/RAMETULLAUBAYDULLAEV_3862311005.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -1566,7 +1566,7 @@
         "first_name": "Biybimariyam",
         "last_name": "Embergenova",
         "image": "person/image/BiybimariyamEmbergenova_Owj0qP6.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1586,7 +1586,7 @@
         "first_name": "Makariya",
         "last_name": "Aytimbetova",
         "image": "person/image/MAKARIYAAYTIMBETOVA_3861111117.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -1606,7 +1606,7 @@
         "first_name": "Aralbay",
         "last_name": "Tursinov",
         "image": "person/image/ARALBAYTURSINOV_3865218948.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -1636,7 +1636,7 @@
         "first_name": "Gulbaxar",
         "last_name": "Erejepova",
         "image": "person/image/GULBAXAREREJEPOVA_3862112013.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -1656,7 +1656,7 @@
         "first_name": "Azamat",
         "last_name": "Abdigapbarov",
         "image": "person/image/AZAMATABDIGAPBAROV_3861811006.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -1686,7 +1686,7 @@
         "first_name": "Nasiba",
         "last_name": "Ismaylova",
         "image": "person/image/NASIBAISMAYLOVA_3862212003.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -1706,7 +1706,7 @@
         "first_name": "Nietbay",
         "last_name": "Reymov",
         "image": "person/image/NIETBAYREYMOV_3861611001.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -1736,7 +1736,7 @@
         "first_name": "Gulan",
         "last_name": "Qdirbaeva",
         "image": "person/image/GULANQDIRBAEVA_3861012001.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -1746,7 +1746,7 @@
         "first_name": "Nawbahar",
         "last_name": "Kudaybergenova",
         "image": "person/image/Kudaybergenova_Nawbahar.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1806,7 +1806,7 @@
         "first_name": "Venera",
         "last_name": "Utepbergenova",
         "image": "person/image/Utepbergenova_Venera.jpg",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -1856,7 +1856,7 @@
         "first_name": "Ranaxan",
         "last_name": "Zabidullaeva",
         "image": "person/image/RANAXANZABIDULLAEVA_3862112019.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -1886,7 +1886,7 @@
         "first_name": "Islambek",
         "last_name": "Amaniyazov",
         "image": "person/image/IMG_9152.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1896,7 +1896,7 @@
         "first_name": "Gulshexra",
         "last_name": "Erjanova",
         "image": "person/image/GulshexraYerejepova_3462212189.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -1906,7 +1906,7 @@
         "first_name": "Tolqin",
         "last_name": "Allabergenov",
         "image": "person/image/IMG_9153.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1916,7 +1916,7 @@
         "first_name": "Kuandik",
         "last_name": "Allambergenov",
         "image": "person/image/Кууандык_тюторь.jpg",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -1936,7 +1936,7 @@
         "first_name": "Nofazot",
         "last_name": "Qazibayeva",
         "image": "person/image/Qazibayeva_Nofazot.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -1946,7 +1946,7 @@
         "first_name": "Dilfuza",
         "last_name": "Kojalepesova",
         "image": "person/image/DilfuzaKojalepesova.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -1966,7 +1966,7 @@
         "first_name": "Altingul",
         "last_name": "Djumanazarova",
         "image": "person/image/ALTINGULDJUMANAZAROVA_3860312001.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -1996,7 +1996,7 @@
         "first_name": "Baxitgul",
         "last_name": "Kurbaniyazova",
         "image": "person/image/BAXITGULKURBANIYAZOVA_3860312005.jpg",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2046,7 +2046,7 @@
         "first_name": "Ayjamal",
         "last_name": "Tairova",
         "image": "person/image/Tairova_Ayjamal.jpg",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2056,7 +2056,7 @@
         "first_name": "Omirbay",
         "last_name": "Aknazarov",
         "image": "person/image/WOMIRBAYAKNAZAROV_3861711012.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2066,7 +2066,7 @@
         "first_name": "Jalgasbay",
         "last_name": "Shamuratov",
         "image": "person/image/JALGASBAYSHAMURATOV_3462011172_j3Ik9Ho.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2086,7 +2086,7 @@
         "first_name": "Sharigul",
         "last_name": "Tolepova",
         "image": "person/image/SHARIGULTOLEPOVA_3869512548.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2116,7 +2116,7 @@
         "first_name": "Rano",
         "last_name": "Jumatova",
         "image": "person/image/RANOJUMATOVA_3862112014.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2126,7 +2126,7 @@
         "first_name": "Abdikadir",
         "last_name": "Genjemuratov",
         "image": "person/image/ABDIKADIRGENJEMURATOV_3862211011.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2156,7 +2156,7 @@
         "first_name": "Dilfuza",
         "last_name": "Sidikova",
         "image": "person/image/DILFUZASIDIKOVA_3862780210.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2166,7 +2166,7 @@
         "first_name": "Nursultan",
         "last_name": "Bekjanov",
         "image": "person/image/NURSULTANBEKJANOV_3862495608.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2196,7 +2196,7 @@
         "first_name": "Gulnara",
         "last_name": "Qayipnazarova",
         "image": "person/image/GULNARAQAYIPNAZAROVA_3861205483.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2256,7 +2256,7 @@
         "first_name": "Umitay",
         "last_name": "Amanjolova",
         "image": "person/image/UMITAYAMANJOLOVA_3865265232.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2286,7 +2286,7 @@
         "first_name": "Ziuarxan",
         "last_name": "Toreniyazova",
         "image": "person/image/ZIUARXANTORENIYAZOVA_3862012006.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2296,7 +2296,7 @@
         "first_name": "Marjan",
         "last_name": "Pirniyazova",
         "image": "person/image/MARJANPIRNIYAZOVA_3865551564.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2306,7 +2306,7 @@
         "first_name": "Gulnar",
         "last_name": "Ataxanova",
         "image": "person/image/GULNARATAXANOVA_3861912006.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2326,7 +2326,7 @@
         "first_name": "Nurjan",
         "last_name": "Qonaqbaev",
         "image": "person/image/Qonaqbaev_Nurjan.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2336,7 +2336,7 @@
         "first_name": "Svetlana",
         "last_name": "Saparova",
         "image": "person/image/SVETLANASAPAROVA_3862482105.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2426,7 +2426,7 @@
         "first_name": "Quatbay",
         "last_name": "Tanirbergenov",
         "image": "person/image/QUWATTANIRBERGENOV_3865971506.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -2456,7 +2456,7 @@
         "first_name": "Janna",
         "last_name": "Orazova",
         "image": "person/image/JANNAORAZOVA_3865694108.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2486,7 +2486,7 @@
         "first_name": "Miyras",
         "last_name": "Kutlimuratov",
         "image": "person/image/MIYRASKUTLIMURATOV_3862222222.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -2506,7 +2506,7 @@
         "first_name": "Mexriban",
         "last_name": "Abdullaeva",
         "image": "person/image/MexribanAbdullaeva_7ICCb0d.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2516,7 +2516,7 @@
         "first_name": "Kamila",
         "last_name": "Elmuratova",
         "image": "person/image/KamilaElmuratova.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2526,7 +2526,7 @@
         "first_name": "Gulsanem",
         "last_name": "Doshinyazova",
         "image": "person/image/GULSANEMDOSHNIYAZOVA_3689856898.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2576,7 +2576,7 @@
         "first_name": "Gulzar",
         "last_name": "Ismaylova",
         "image": "person/image/IMG_9003.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2586,7 +2586,7 @@
         "first_name": "Manzura",
         "last_name": "Zayroova",
         "image": "person/image/IMG_9009.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2596,7 +2596,7 @@
         "first_name": "Ilmira",
         "last_name": "Sarsenbaeva",
         "image": "person/image/IMG_9006.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2616,7 +2616,7 @@
         "first_name": "Amina",
         "last_name": "Bektursinova",
         "image": "person/image/AMINABEKTURSINOVA.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2646,7 +2646,7 @@
         "first_name": "Gulbahar",
         "last_name": "Allamjarova",
         "image": "person/image/Allamjarova_Gulbahar.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2676,7 +2676,7 @@
         "first_name": "Ubbiniyaz",
         "last_name": "Djumaniyazov",
         "image": "person/image/IMG_9138.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2686,7 +2686,7 @@
         "first_name": "Gulparshın",
         "last_name": "Shanazarova",
         "image": "person/image/GulparshınShanazarova.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2696,7 +2696,7 @@
         "first_name": "Gozzal",
         "last_name": "Asembaeva",
         "image": "person/image/GozzalAsembaeva.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -2706,7 +2706,7 @@
         "first_name": "Gulzada",
         "last_name": "Dawletmuratova",
         "image": "person/image/Dawletmuratova_Gulzada.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2716,7 +2716,7 @@
         "first_name": "Surayyo",
         "last_name": "Qurbanniyazova",
         "image": "person/image/Qurbanniyazova_Surayyo.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2736,7 +2736,7 @@
         "first_name": "Zulkumar",
         "last_name": "Kallibekova",
         "image": "person/image/IMG_9031.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2786,7 +2786,7 @@
         "first_name": "Ziyada",
         "last_name": "Ranova",
         "image": "person/image/ZIYADARANOVA_3862412017.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2826,7 +2826,7 @@
         "first_name": "Axmed",
         "last_name": "Yesimbetov",
         "image": "person/image/AxmetEsimbetov_Mug_u8d9s8a.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2836,7 +2836,7 @@
         "first_name": "Timurbek",
         "last_name": "Nurxasinov",
         "image": "person/image/IMG_9047_Z9Ui1g6.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -2886,7 +2886,7 @@
         "first_name": "Kodal",
         "last_name": "Suleyman",
         "image": "person/image/1Suleyman_Kodal.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -2926,7 +2926,7 @@
         "first_name": "Xudoyor",
         "last_name": "Matiyakubov",
         "image": "person/image/IMG_9071.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -2936,7 +2936,7 @@
         "first_name": "Otabek",
         "last_name": "Axmedov",
         "image": "person/image/IMG_9070.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -2956,7 +2956,7 @@
         "first_name": "Nigargul",
         "last_name": "Saribaeva",
         "image": "person/image/IMG_9053.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -2976,7 +2976,7 @@
         "first_name": "Nurzada",
         "last_name": "Djumabaeva",
         "image": "person/image/Djumabaeva_Nurzada.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -2996,7 +2996,7 @@
         "first_name": "Dilfuza",
         "last_name": "Esenova",
         "image": "person/image/Esenova_Dilfuza.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3006,7 +3006,7 @@
         "first_name": "Gulistan",
         "last_name": "Eshanova",
         "image": "person/image/Eshanova_Gulistan.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3046,7 +3046,7 @@
         "first_name": "Gauxar",
         "last_name": "Genjemuratova",
         "image": "person/image/GauxarGenjemuratova_7SYRhoz.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -3076,7 +3076,7 @@
         "first_name": "Amanbay",
         "last_name": "Saparov",
         "image": "person/image/IMG_9022.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -3096,7 +3096,7 @@
         "first_name": "Shaxnoza",
         "last_name": "Sabirova",
         "image": "person/image/Sabirova-Shaxnoza.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3116,7 +3116,7 @@
         "first_name": "Palsanem",
         "last_name": "Kalniyazova",
         "image": "person/image/PALSANEMKALNIYAZOVA_3863475606.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -3126,7 +3126,7 @@
         "first_name": "Fazu",
         "last_name": "Sherjanova",
         "image": "person/image/photo_2024-10-23_17-52-27.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3146,7 +3146,7 @@
         "first_name": "Azamat",
         "last_name": "Maulenov",
         "image": "person/image/DSC_0753_копия_копия.jpg",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -3156,7 +3156,7 @@
         "first_name": "Doniyor",
         "last_name": "Hayitboyev",
         "image": "person/image/IMG_9072.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -3186,7 +3186,7 @@
         "first_name": "Malika",
         "last_name": "Kulimova",
         "image": "person/image/photo_2024-10-23_18-43-10.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3196,7 +3196,7 @@
         "first_name": "Alliyar",
         "last_name": "Abdikarimov",
         "image": "person/image/IMG_9092.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -3206,7 +3206,7 @@
         "first_name": "Gulnaz",
         "last_name": "Paluaniyazova",
         "image": "person/image/IMG_9087.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -3226,7 +3226,7 @@
         "first_name": "Ruslan",
         "last_name": "Seilbekov",
         "image": "person/image/photo_2024-10-23_18-47-44.jpg",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -3236,7 +3236,7 @@
         "first_name": "Shaxzada",
         "last_name": "Bektursinova",
         "image": "person/image/IMG_9115.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -3246,7 +3246,7 @@
         "first_name": "Baxtiyar",
         "last_name": "Bauetdinov",
         "image": "person/image/IMG_9082.JPG",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -3256,7 +3256,7 @@
         "first_name": "Aisara",
         "last_name": "Kurbanova",
         "image": "person/image/photo_2024-10-23_17-18-31.jpg",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -3306,7 +3306,7 @@
         "first_name": "Zamira",
         "last_name": "Mambetniyazova",
         "image": "person/image/photo_2024-10-23_18-51-52.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3316,7 +3316,7 @@
         "first_name": "Gozzal",
         "last_name": "Kurbanbaeva",
         "image": "person/image/GozzalKurbanbaeva.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -3326,7 +3326,7 @@
         "first_name": "Perizat",
         "last_name": "Jaumitbayeva",
         "image": "person/image/PERIZATJAUMITBAYEVA_3862012020.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3336,7 +3336,7 @@
         "first_name": "Allanazar",
         "last_name": "Seyfullaev",
         "image": "person/image/Алланазар.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3346,7 +3346,7 @@
         "first_name": "Marat",
         "last_name": "Genjebaev",
         "image": "person/image/Genjebaev_Marat.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3356,7 +3356,7 @@
         "first_name": "Qudaybergen",
         "last_name": "Makulbaev",
         "image": "person/image/QUDAYBERGENMAKULBAEV_3862011002.JPG",
-        "department_id": "bf28e63f-94e5-48c8-ab3a-996279c6c514",
+        "department_id": 33,
         "role_id": 1
     },
     {
@@ -3366,7 +3366,7 @@
         "first_name": "Sholpanay",
         "last_name": "Kunnazarova",
         "image": "person/image/photo_2024-10-23_17-52-21.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3376,7 +3376,7 @@
         "first_name": "Gulshatay",
         "last_name": "Saribaeva",
         "image": "person/image/Saribaeva_Gulshatay.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3386,7 +3386,7 @@
         "first_name": "Ariwxan",
         "last_name": "Sherbekova",
         "image": "person/image/АriwxanSherbekova_doktorant.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3436,7 +3436,7 @@
         "first_name": "Manzura",
         "last_name": "Yerejepova",
         "image": "person/image/MANZURAYEREJEPOVA_3862212039.JPG",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -3466,7 +3466,7 @@
         "first_name": "Maman",
         "last_name": "Orazaliev",
         "image": "person/image/photo_2025-05-08_09-20-25.jpg",
-        "department_id": "3bf5abe5-fff9-4105-b7ca-8e13637ce5c1",
+        "department_id": 29,
         "role_id": 1
     },
     {
@@ -3566,7 +3566,7 @@
         "first_name": "Roza",
         "last_name": "Kutlimuratova",
         "image": "person/image/QUTLIMURATOVA_ROZA_.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -3596,7 +3596,7 @@
         "first_name": "Gulchexra",
         "last_name": "Turimbetova",
         "image": "person/image/IMG_9111.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -3606,7 +3606,7 @@
         "first_name": "Mirzagul",
         "last_name": "Jadigerova",
         "image": "person/image/Мырзагул_Жадигерова.jpg",
-        "department_id": "e55dd094-7ec2-42b5-9a73-1f388df0388c",
+        "department_id": 28,
         "role_id": 2
     },
     {
@@ -3616,7 +3616,7 @@
         "first_name": "Gulnara",
         "last_name": "Jsmetova",
         "image": "person/image/Jsmetova_Gulnara.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3626,7 +3626,7 @@
         "first_name": "Mamanbek",
         "last_name": "Sarsenbaev",
         "image": "person/image/Sarsenbaev_Mamanbek.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3636,7 +3636,7 @@
         "first_name": "Zamira",
         "last_name": "Kalmuratova",
         "image": "person/image/ZamiraKalmuratova_doktorant.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3676,7 +3676,7 @@
         "first_name": "Daniyar",
         "last_name": "Jumamuratov",
         "image": "person/image/006.JPG",
-        "department_id": "4fda59e8-3fa6-486f-a10a-10dc26029c4d",
+        "department_id": 30,
         "role_id": 1
     },
     {
@@ -3686,7 +3686,7 @@
         "first_name": "Dilfuza",
         "last_name": "Amanjolova",
         "image": "person/image/Dilfuza_Amanjolova.jpg",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -3696,7 +3696,7 @@
         "first_name": "Maksud",
         "last_name": "Abdullaev",
         "image": "person/image/photo_2024-10-24_11-09-32.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3706,7 +3706,7 @@
         "first_name": "Navbaxor",
         "last_name": "Tleubergenova",
         "image": "person/image/photo_2024-10-23_18-53-06.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3716,7 +3716,7 @@
         "first_name": "Ajiniyaz",
         "last_name": "Djanabayev",
         "image": "person/image/photo_2024-10-23_18-54-47.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3736,7 +3736,7 @@
         "first_name": "Naubaxar",
         "last_name": "Uzakbaeva",
         "image": "person/image/photo_2024-10-23_19-00-06.jpg",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3816,7 +3816,7 @@
         "first_name": "Qizlargul",
         "last_name": "Atabaeva",
         "image": "person/image/Атабаева_Кызларгул.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -3846,7 +3846,7 @@
         "first_name": "Asqar",
         "last_name": "Bekimbetov",
         "image": "person/image/IMG_9093.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -3866,7 +3866,7 @@
         "first_name": "Ulugbek",
         "last_name": "Allamjarov",
         "image": "person/image/IMG_9137.JPG",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -3896,7 +3896,7 @@
         "first_name": "Dilfuza",
         "last_name": "Kaipova",
         "image": "person/image/Kaipova_Dilfuza.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3906,7 +3906,7 @@
         "first_name": "Aysuliw",
         "last_name": "Shamshetova",
         "image": "person/image/Shamshetova_Aysuliw.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3916,7 +3916,7 @@
         "first_name": "Islambek",
         "last_name": "Tolibekov",
         "image": "person/image/IslambekTolıbekov.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -3926,7 +3926,7 @@
         "first_name": "Gúlayda",
         "last_name": "Umbetbaeva",
         "image": "person/image/GúlaydaUmbetbaeva_doktorant.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -3936,7 +3936,7 @@
         "first_name": "Aynura",
         "last_name": "Ametova",
         "image": "person/image/AynurAmetova.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -3946,7 +3946,7 @@
         "first_name": "Guljaxan",
         "last_name": "Seytbaeva",
         "image": "person/image/GULJAXANSEYTBAEVA_3862548606.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -3956,7 +3956,7 @@
         "first_name": "Zinatdin",
         "last_name": "Karimbergenov",
         "image": "person/image/photo_2024-11-02_09-01-02.jpg",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -3996,7 +3996,7 @@
         "first_name": "Zulfiya",
         "last_name": "Aymambetova",
         "image": "person/image/зззззз.jpg",
-        "department_id": "732c4638-8094-42fe-9993-12d538aa30ba",
+        "department_id": 23,
         "role_id": 1
     },
     {
@@ -4006,7 +4006,7 @@
         "first_name": "Abdullaeva",
         "last_name": "Mexriban",
         "image": "person/image/Абдуллаева_М.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -4016,7 +4016,7 @@
         "first_name": "Sultanbek",
         "last_name": "Allamjarov",
         "image": "person/image/Алламжаров_Султанбек.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -4056,7 +4056,7 @@
         "first_name": "Gulsanem",
         "last_name": "Doshniyazova",
         "image": "person/image/дддддддд.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -4066,7 +4066,7 @@
         "first_name": "Sanegul",
         "last_name": "Genjemuratova",
         "image": "person/image/SANEGULGENJEBAEVA_3862563226.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4076,7 +4076,7 @@
         "first_name": "Aygul",
         "last_name": "Purxanova",
         "image": "person/image/AygulPurxanova_3862212014.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4086,7 +4086,7 @@
         "first_name": "Gulayim",
         "last_name": "Berdisheva",
         "image": "person/image/GulayimBerdisheva_3862112002.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4096,7 +4096,7 @@
         "first_name": "Miywagul",
         "last_name": "Seytekova",
         "image": "person/image/MIUAGULSEYTEKOVA_3862212006.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4106,7 +4106,7 @@
         "first_name": "Rustem",
         "last_name": "Atamuratov",
         "image": "person/image/RUSTEMATAMURATOV_3865972536.jpg",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4116,7 +4116,7 @@
         "first_name": "Gulmira",
         "last_name": "Tursinbaeva",
         "image": "person/image/GULMIRATURSIMBEKOVA_3862563217.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4126,7 +4126,7 @@
         "first_name": "Raushan",
         "last_name": "Sharafatdinova",
         "image": "person/image/Sharafatdinova.jpg",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4136,7 +4136,7 @@
         "first_name": "Temur",
         "last_name": "Orakbayev",
         "image": "person/image/TEMURORAKBAYEV_386211100188.jpg",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -4146,7 +4146,7 @@
         "first_name": "Fatima",
         "last_name": "Kaniyazova",
         "image": "person/image/Kaniyazova_Fatima.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4156,7 +4156,7 @@
         "first_name": "Nilufar",
         "last_name": "Shamshetova",
         "image": "person/image/Shamshetova-Nilufar.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4166,7 +4166,7 @@
         "first_name": "Raxman",
         "last_name": "Ajiniyazov",
         "image": "person/image/RaxmanAjiniyazov.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -4176,7 +4176,7 @@
         "first_name": "Shiyrin",
         "last_name": "Saparniyazova",
         "image": "person/image/ShiyrinSaparniyazova_bolim.JPG",
-        "department_id": "3f94f63e-3b25-4633-bca9-95ca5b913441",
+        "department_id": 31,
         "role_id": 1
     },
     {
@@ -4196,7 +4196,7 @@
         "first_name": "Daniyar",
         "last_name": "Ramazanov",
         "image": "person/image/DANIYARRAMAZANOV_3865489636.JPG",
-        "department_id": "a53884c8-3de4-45dc-aa5f-0aed2efb3874",
+        "department_id": 27,
         "role_id": 1
     },
     {
@@ -4206,7 +4206,7 @@
         "first_name": "Gulshada",
         "last_name": "Kenjebaeva",
         "image": "person/image/GúlshadaKenjebaeva_redaktor.JPG",
-        "department_id": "5ecfb88b-8a77-4194-959f-6bae56428894",
+        "department_id": 32,
         "role_id": 1
     },
     {
@@ -4216,7 +4216,7 @@
         "first_name": "Tilewxan",
         "last_name": "Mambetmuratova",
         "image": "person/image/MAMBETMURATOVA___TLEWXAN__mugalim_Gumanitar_panler.JPG",
-        "department_id": "daa6655c-3b9d-490d-b90b-ce83cd768ae8",
+        "department_id": 25,
         "role_id": 2
     },
     {
@@ -4226,7 +4226,7 @@
         "first_name": "Nurmuxammet",
         "last_name": "Xojabaev",
         "image": "person/image/NurmaxambetXojabayev_3862211020.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4236,7 +4236,7 @@
         "first_name": "Omirbay",
         "last_name": "Reimov",
         "image": "person/image/OMIRBAYREYMOV_3865489640.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -4256,7 +4256,7 @@
         "first_name": "Arzayim",
         "last_name": "Tlegenova",
         "image": "person/image/ArzayimTlegenova_3863210213.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4266,7 +4266,7 @@
         "first_name": "Nawriz",
         "last_name": "Janabaev",
         "image": "person/image/NAURIZJANABAEV_3865489639.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4286,7 +4286,7 @@
         "first_name": "Janibek",
         "last_name": "Nizanov",
         "image": "person/image/JANIBEKNIZANOV_3862563220.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4296,7 +4296,7 @@
         "first_name": "Gulayim",
         "last_name": "Ablatova",
         "image": "person/image/GULAYIMABILATOVA_3862563214.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4306,7 +4306,7 @@
         "first_name": "Jaqsibay",
         "last_name": "Kalimbetov",
         "image": "person/image/JAQSIBAYKALIMBETOV_3861911007.JPG",
-        "department_id": "a67c39a6-e50b-49d5-a8e9-0c183bbf08c8",
+        "department_id": 26,
         "role_id": 2
     },
     {
@@ -4316,7 +4316,7 @@
         "first_name": "Nilufar",
         "last_name": "Qudaybergenova",
         "image": "person/image/NELUFARKUDAYBERGENOVA_3862563224.JPG",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     },
     {
@@ -4326,7 +4326,7 @@
         "first_name": "Risolatxon",
         "last_name": "Imyaminova",
         "image": "person/image/RISOLATXONIMYAMINOVA_3862563225.jpg",
-        "department_id": "021bea72-08b5-495e-9a8c-e4aab120bc11",
+        "department_id": 24,
         "role_id": 2
     }
 ]
