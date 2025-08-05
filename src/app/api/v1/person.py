@@ -32,11 +32,6 @@ async def create_person(
     image: UploadFile = File(...),
     session=TransactionSessionDep,
 ):
-    role_id = await DepartmentDAO.get_role_id(session=session, department_id=department_id)
-    if role_id is None:
-        raise NotFoundException(
-            message="Department not found",
-        )
 
     os.makedirs("storage/persons", exist_ok=True)
     save_path = f"storage/persons/{uuid.uuid4()}.{image.filename.split(".")[-1]}"
@@ -47,7 +42,6 @@ async def create_person(
         first_name=first_name,
         last_name=last_name,
         department_id=department_id,
-        role_id=role_id,
         image_url=save_path,
     )
 
@@ -71,7 +65,6 @@ async def get_person_by_id(
     response_model=PaginatedListResponse[PersonRead],
 )
 async def get_persons(
-    role_id: int | None = None,
     department_id: int | None = None,
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1),
@@ -80,14 +73,12 @@ async def get_persons(
     db_persons_count = await PersonDAO.count(
         session=session,
         filters=PersonFilter(
-            role_id=role_id,
             department_id=department_id,
         ),
     )
     db_persons = await PersonDAO.paginate(
         session=session,
         filters=PersonFilter(
-            role_id=role_id,
             department_id=department_id,
         ),
         page=page,

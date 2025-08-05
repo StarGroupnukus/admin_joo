@@ -23,9 +23,3 @@ class Person(Base):
         ForeignKey("departments.id"),
         nullable=False,
     )
-    role_id: Mapped[int] = mapped_column(
-        ForeignKey("roles.id"),
-        nullable=False,
-    )
-    
-    

@@ -8,7 +8,7 @@ class PersonBase(BaseModel):
     last_name: str
     image_url: str
     department_id: int
-    role_id: int
+
     
 class PersonCreate(PersonBase):
     pass
@@ -29,7 +29,6 @@ class PersonFilter(PersonBase):
     last_name : str | None = None
     image_url : str | None = None
     department_id : int | None = None
-    role_id : int | None = None
 
 class PersonFullRead(BaseModel):
     id: int
