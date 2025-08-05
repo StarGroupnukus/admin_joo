@@ -107,6 +107,9 @@ services:
       sh -c "
         python -m src.scripts.create_first_superuser
         python -m src.scripts.create_first_tier
+        python -m src.scripts.create_roles
+        python -m src.scripts.create_departments
+        python -m src.scripts.create_persons
       "
 
 volumes:
