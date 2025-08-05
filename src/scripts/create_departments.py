@@ -1,12 +1,13 @@
 import asyncio
-import logging
 import json
+import logging
+
 from sqlalchemy.ext.asyncio import AsyncSession
 
+from app.core.config import SOURCE_DIR
 from app.core.db import db_helper
 from app.dao.department import DepartmentDAO
 from app.schemas.department import DepartmentCreate
-from app.core.config import SOURCE_DIR
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
