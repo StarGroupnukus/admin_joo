@@ -1,23 +1,25 @@
 services:
-  app:
-    build:
-      dockerfile: ./docker-build/app/Dockerfile
-      context: ./
-    ports:
-      - "8000:8000"
-    depends_on:
-      pg:
-        condition: service_healthy
-#    command:
-#      - python
-#      - run_main.py
-    develop:
-      watch:
-        - action: sync+restart
-          path: ./src
-          target: /src
-        - action: rebuild
-          path: ./poetry.lock
+#   app:
+#     build:
+#       dockerfile: ./docker-build/app/Dockerfile
+#       context: ./
+#     ports:
+#       - "8000:8000"
+#     depends_on:
+#       pg:
+#         condition: service_healthy
+# #    command:
+# #      - python
+# #      - run_main.py
+#     develop:
+#       watch:
+#         - action: sync+restart
+#           path: ./src
+#           target: /src
+#         - action: rebuild
+#           path: ./poetry.lock
+#     networks:
+#       - admin_joo
 
   pg:
     image: postgres:16.4
@@ -34,6 +36,8 @@ services:
       interval: 5s
       timeout: 3s
       retries: 3
+    networks:
+      - admin_joo
 
   redis:
     image: redis:alpine
@@ -49,7 +53,9 @@ services:
       test: [ "CMD-SHELL", "redis-cli", "ping" ]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 5  
+    networks:
+      - admin_joo
 
   adminer:
     image: adminer
@@ -61,7 +67,9 @@ services:
     depends_on:
       pg:
         condition: service_healthy
-
+    networks:
+      - admin_joo
+      
   worker:
     build:
       context: ./
@@ -78,30 +86,39 @@ services:
       - ./src/.env.dev:/src/.env
       - ./src/app:/src/app
       - /etc/localtime:/etc/localtime:ro
+    networks:
+      - admin_joo
 
-  init_scripts:
-    build:
-      context: ./
-      dockerfile: ./docker-build/app/Dockerfile
-    env_file:
-      - ./src/.env.dev
-    depends_on:
-      pg:
-        condition: service_healthy
-      app:
-        condition: service_started
+  # init_scripts:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker-build/app/Dockerfile
+  #   env_file:
+  #     - ./src/.env.dev
+  #   depends_on:
+  #     pg:
+  #       condition: service_healthy
+  #     # app:
+  #     #   condition: service_started
 
-    volumes:
-      - ./src:/src
-      - ./src/.env.dev:/src/.env
-      - ./src/certs:/src/certs:ro
+  #   volumes:
+  #     - ./src:/src
+  #     - ./src/.env.dev:/src/.env
+  #     - ./src/certs:/src/certs:ro
 
-    command: >
-      sh -c "
-        python -m src.scripts.create_first_superuser
-        python -m src.scripts.create_first_tier
-      "
+  #   command: >
+  #     sh -c "
+  #       python -m src.scripts.create_first_superuser
+  #       python -m src.scripts.create_first_tier
+  #     "
+  #   networks:
+  #     - admin_joo
 
 volumes:
   pgdata:
   redis-data:
+
+networks:
+  admin_joo:
+    driver: bridge
+  

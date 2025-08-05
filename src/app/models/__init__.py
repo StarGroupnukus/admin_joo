@@ -5,6 +5,9 @@ __all__ = (
     "Tier",
     "TokenBlacklist",
     "User",
+    "Role",
+    "Person",
+    "Department",
 )
 
 from .base import Base
@@ -13,3 +16,7 @@ from .rate_limit import RateLimit
 from .tier import Tier
 from .token_blacklist import TokenBlacklist
 from .user import User
+from .roles import Role
+from .persons import Person
+from .departments import Department
+

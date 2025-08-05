@@ -1,0 +1,57 @@
+from fastapi import APIRouter
+from app.core.db import TransactionSessionDep
+from app.dao.department import DepartmentDAO
+from app.schemas.department import DepartmentCreate, DepartmentRead, DepartmentFilter
+from app.core.config import settings
+from app.schemas import DataResponse, PaginatedListResponse, get_pagination
+from fastapi import status, Query
+
+router = APIRouter(
+    prefix=settings.api.v1.departments,
+    tags=["Departments"],
+)
+
+
+@router.post(
+    "",
+    status_code=status.HTTP_201_CREATED,
+    response_model=DataResponse[DepartmentRead],
+)
+async def create_department(
+    department: DepartmentCreate,
+    session=TransactionSessionDep,
+):
+    department = await DepartmentDAO.add(session=session, values=department)
+    return DataResponse(
+        data=department,
+    )
+
+@router.get(
+    'get_all',
+    response_model=PaginatedListResponse[DepartmentRead],
+)
+async def get_departments(
+    page: int = Query(1, ge=1),
+    page_size: int = Query(10, ge=1),
+    session=TransactionSessionDep,
+):
+    db_departments_count = await DepartmentDAO.count(
+        session=session,
+        filters=DepartmentFilter(),
+    )
+    db_departments = await DepartmentDAO.paginate(
+        session=session,
+        filters=DepartmentFilter(),
+        page=page,
+        page_size=page_size,
+        order_by="id",
+        order_direction="desc",
+    )
+    return PaginatedListResponse(
+        data=db_departments,
+        pagination=get_pagination(
+            total_count=db_departments_count,
+            page=page,
+            page_size=page_size,
+        ),
+    )

@@ -66,7 +66,9 @@ class ApiV1Prefix(BaseModel):
     posts: str = "/posts"
     tiers: str = "/tiers"
     rate_limits: str = "/rate-limits"
-
+    roles: str = "/roles"
+    persons: str = "/persons"
+    departments: str = "/departments"
 
 class ApiPrefix(BaseModel):
     prefix: str = "/api"
