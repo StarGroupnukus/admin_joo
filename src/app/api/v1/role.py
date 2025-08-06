@@ -27,8 +27,9 @@ async def create_role(
         data=role,
     )
 
+
 @router.get(
-    "get_all",
+    "/get_all",
     response_model=ListResponse[RoleRead],
 )
 async def get_roles(
