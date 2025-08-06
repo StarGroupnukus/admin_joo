@@ -1,16 +1,15 @@
 from typing import ClassVar
 
-from arq import cron
 from arq.connections import RedisSettings
 
 from app.core.config import settings
 
 from .functions import (
+    create_zip,
     sample_background_task,
     send_sms_task,
     shutdown,
     startup,
-    create_zip,
 )
 
 

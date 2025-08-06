@@ -35,6 +35,10 @@ class PersonUpdate(PersonBase):
     last_name: str | None = None
     department_id: int | None = None
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> dcd45f201b9f0ceed7c3e04dc25c0f870acec82e
 class PersonFullRead(BaseModel):
     id: int
     first_name: str

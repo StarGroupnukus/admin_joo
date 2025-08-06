@@ -14,6 +14,24 @@ from app.schemas import PaginatedListResponse, get_pagination
 import os
 import uuid
 
+<<<<<<< HEAD
+=======
+from fastapi import APIRouter, File, Form, Query, UploadFile, status
+
+from app.core.config import settings
+from app.core.db import TransactionSessionDep
+from app.core.exceptions import NotFoundException
+from app.core.utils import task_queue
+from app.dao.person import PersonDAO
+from app.schemas import DataResponse, PaginatedListResponse, get_pagination
+from app.schemas.person import (
+    PersonCreate,
+    PersonFilter,
+    PersonFullRead,
+    PersonRead,
+    PersonUpdate,
+)
+>>>>>>> dcd45f201b9f0ceed7c3e04dc25c0f870acec82e
 
 router = APIRouter(
     prefix=settings.api.v1.persons,

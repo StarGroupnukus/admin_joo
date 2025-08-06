@@ -1,9 +1,6 @@
+from typing import List
 import pandas as pd
 from app.schemas.person import PersonExcel
-from typing import List
-from shutil import make_archive
-import os
-import shutil
 
 async def create_excel(file_path: str, persons_data: List[PersonExcel]):
     data = [

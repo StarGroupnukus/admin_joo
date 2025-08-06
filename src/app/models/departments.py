@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 from typing import TYPE_CHECKING
+=======
+
+from sqlalchemy import ForeignKey, String
+from sqlalchemy.orm import Mapped, mapped_column
+>>>>>>> dcd45f201b9f0ceed7c3e04dc25c0f870acec82e
 
 from sqlalchemy import String, ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column

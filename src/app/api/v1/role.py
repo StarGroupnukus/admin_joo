@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from app.core.db import TransactionSessionDep
+from app.core.exceptions import NotFoundException
 from app.dao.role import RoleDAO
 from app.schemas.response import ListResponse
 from app.schemas.role import RoleCreate, RoleRead
@@ -28,7 +29,7 @@ async def create_role(
     )
 
 @router.get(
-    "get_all",
+    "/get_all",
     response_model=ListResponse[RoleRead],
 )
 async def get_roles(
@@ -38,6 +39,10 @@ async def get_roles(
         session=session,
         filters=None,
     )
+    if roles is None:
+        raise NotFoundException(
+            message="Roles not found",
+        )
     return ListResponse(
         data=roles,
         total=len(roles),
