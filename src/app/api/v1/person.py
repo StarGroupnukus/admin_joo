@@ -58,6 +58,10 @@ async def get_person_by_id(
     session=TransactionSessionDep,
 ):
     person = await PersonDAO.get_person_by_id(session=session, person_id=person_id)
+    if person is None:
+        raise NotFoundException(
+            message="Person not found",
+        )
     return DataResponse(data=person)
     
 @router.get(

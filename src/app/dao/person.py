@@ -67,7 +67,7 @@ class PersonDAO(BaseDAO):
             id=record["id"],
             first_name=record["first_name"],
             last_name=record["last_name"],
-            department=f'Agro/{record["role"]}/{record["department"]}',
+            department=f'Agro/{record["role"].lower()}/{record["department"].upper()}',
             image_url=record["image_url"],
             created_at=record["created_at"].strftime("%Y/%m/%d %H:%M:%S"),
             extented_at=(record["created_at"] + timedelta(days=365 * 10)).strftime("%Y/%m/%d %H:%M:%S"),

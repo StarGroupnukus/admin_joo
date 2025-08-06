@@ -9,8 +9,8 @@ async def create_excel(file_path: str, persons_data: List[PersonExcel]):
     data = [
         {
             "Идентификатор": p.id,
-            "Имя": p.first_name,
-            "Фамилия": p.last_name,
+            "Имя": p.first_name.upper(),
+            "Фамилия": p.last_name.upper(),
             "Департамент": p.department,
             "Начало срока действия": p.created_at,
             "Конец срока действия": p.extented_at,

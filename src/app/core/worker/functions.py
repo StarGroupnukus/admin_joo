@@ -31,7 +31,7 @@ async def create_zip(
         os.makedirs(f"{SOURCE_DIR}/storage/tmp/images", exist_ok=True)
         shutil.copyfile(
             person.image_url,
-            f"{SOURCE_DIR}/storage/tmp/images/{person.id}.{person.image_url.split(".")[-1]}",
+            f"{SOURCE_DIR}/storage/tmp/images/{person.first_name.upper()}+{person.last_name.upper()}_{person.id}.{person.image_url.split(".")[-1]}",
         )
     await create_excel(file_path=f"{SOURCE_DIR}/storage/tmp/person.xlsx", persons_data=persons_data)
     make_archive(f"{SOURCE_DIR}/storage/person", "zip", f"{SOURCE_DIR}/storage/tmp")
