@@ -1,19 +1,18 @@
 import asyncio
 import logging
+import os
+import shutil
+from shutil import make_archive
+from typing import List
 
 import uvloop
 from arq.worker import Worker
 
-from app.core.config import settings
+from app.core.config import SOURCE_DIR, settings
 from app.core.db import db_helper
 from app.core.services.eskiz.eskiz_client import AsyncEskizClient
-from app.schemas.person import PersonExcel
-from typing import List
-from shutil import make_archive
-import os
-import shutil
 from app.core.utils.create_zip import create_excel
-from app.core.config import SOURCE_DIR
+from app.schemas.person import PersonExcel
 
 asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
