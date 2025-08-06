@@ -7,7 +7,6 @@ from .base import Base
 
 if TYPE_CHECKING:
     from .post import Post
-    from .tier import Tier
 
 
 class User(Base):
@@ -45,11 +44,4 @@ class User(Base):
     )
     posts: Mapped[list["Post"]] = relationship(
         back_populates="user",
-    )
-    tier_id: Mapped[int | None] = mapped_column(
-        ForeignKey("tiers.id"),
-        nullable=True,
-    )
-    tier: Mapped["Tier"] = relationship(
-        back_populates="users",
     )

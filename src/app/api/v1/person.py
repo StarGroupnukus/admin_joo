@@ -1,21 +1,3 @@
-from fastapi import APIRouter
-from app.core.db import TransactionSessionDep
-from app.core.utils import task_queue
-from app.dao.person import PersonDAO
-from app.dao.department import DepartmentDAO
-from app.schemas.person import PersonCreate, PersonRead, PersonFullRead, PersonExcel, PersonUpdate
-from app.core.config import settings
-from app.schemas import DataResponse
-from fastapi import status, Query
-from fastapi import File, Form, UploadFile
-from app.core.exceptions import NotFoundException
-from app.schemas.person import PersonFilter
-from app.schemas import PaginatedListResponse, get_pagination
-import os
-import uuid
-
-<<<<<<< HEAD
-=======
 from fastapi import APIRouter, File, Form, Query, UploadFile, status
 
 from app.core.config import settings
@@ -31,7 +13,6 @@ from app.schemas.person import (
     PersonRead,
     PersonUpdate,
 )
->>>>>>> dcd45f201b9f0ceed7c3e04dc25c0f870acec82e
 
 router = APIRouter(
     prefix=settings.api.v1.persons,

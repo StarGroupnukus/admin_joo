@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-from typing import TYPE_CHECKING
-
-from sqlalchemy import String, ForeignKey
-=======
 
 from sqlalchemy import ForeignKey, String
->>>>>>> dcd45f201b9f0ceed7c3e04dc25c0f870acec82e
 from sqlalchemy.orm import Mapped, mapped_column
 
-from .base import Base
+from .base import Base  
 
 
 class Person(Base):
