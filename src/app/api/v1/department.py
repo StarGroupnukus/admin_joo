@@ -1,10 +1,10 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Query, status
+
+from app.core.config import settings
 from app.core.db import TransactionSessionDep
 from app.dao.department import DepartmentDAO
-from app.schemas.department import DepartmentCreate, DepartmentRead, DepartmentFilter
-from app.core.config import settings
 from app.schemas import DataResponse, PaginatedListResponse, get_pagination
-from fastapi import status, Query
+from app.schemas.department import DepartmentCreate, DepartmentFilter, DepartmentRead
 
 router = APIRouter(
     prefix=settings.api.v1.departments,
@@ -26,8 +26,9 @@ async def create_department(
         data=department,
     )
 
+
 @router.get(
-    '/get_all',
+    "/get_all",
     response_model=PaginatedListResponse[DepartmentRead],
 )
 async def get_departments(

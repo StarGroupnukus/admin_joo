@@ -1,11 +1,11 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, status
+
+from app.core.config import settings
 from app.core.db import TransactionSessionDep
 from app.dao.role import RoleDAO
+from app.schemas import DataResponse
 from app.schemas.response import ListResponse
 from app.schemas.role import RoleCreate, RoleRead
-from app.core.config import settings
-from app.schemas import DataResponse
-from fastapi import status
 
 router = APIRouter(
     prefix=settings.api.v1.roles,
@@ -26,6 +26,7 @@ async def create_role(
     return DataResponse(
         data=role,
     )
+
 
 @router.get(
     "get_all",

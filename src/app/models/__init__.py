@@ -1,22 +1,15 @@
 __all__ = (
     "Base",
-    "Post",
-    "RateLimit",
-    "Tier",
+    "Department",
+    "Person",
+    "Role",
     "TokenBlacklist",
     "User",
-    "Role",
-    "Person",
-    "Department",
 )
 
 from .base import Base
-from .post import Post
-from .rate_limit import RateLimit
-from .tier import Tier
+from .departments import Department
+from .persons import Person
+from .roles import Role
 from .token_blacklist import TokenBlacklist
 from .user import User
-from .roles import Role
-from .persons import Person
-from .departments import Department
-

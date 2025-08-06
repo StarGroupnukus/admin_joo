@@ -1,13 +1,7 @@
-from typing import TYPE_CHECKING
-
-from sqlalchemy import ForeignKey, String
-from sqlalchemy.orm import Mapped, mapped_column, relationship
+from sqlalchemy import String
+from sqlalchemy.orm import Mapped, mapped_column
 
 from .base import Base
-
-if TYPE_CHECKING:
-    from .post import Post
-    from .tier import Tier
 
 
 class User(Base):
@@ -42,14 +36,4 @@ class User(Base):
     is_superuser: Mapped[bool] = mapped_column(
         default=False,
         server_default="false",
-    )
-    posts: Mapped[list["Post"]] = relationship(
-        back_populates="user",
-    )
-    tier_id: Mapped[int | None] = mapped_column(
-        ForeignKey("tiers.id"),
-        nullable=True,
-    )
-    tier: Mapped["Tier"] = relationship(
-        back_populates="users",
     )

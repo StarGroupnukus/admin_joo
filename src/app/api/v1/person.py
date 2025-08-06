@@ -1,24 +1,27 @@
-from fastapi import APIRouter
-from app.core.db import TransactionSessionDep
-from app.core.utils import task_queue
-from app.dao.person import PersonDAO
-from app.dao.department import DepartmentDAO
-from app.schemas.person import PersonCreate, PersonRead, PersonFullRead, PersonExcel, PersonUpdate
-from app.core.config import settings
-from app.schemas import DataResponse
-from fastapi import status, Query
-from fastapi import File, Form, UploadFile
-from app.core.exceptions import NotFoundException
-from app.schemas.person import PersonFilter
-from app.schemas import PaginatedListResponse, get_pagination
 import os
 import uuid
 
+from fastapi import APIRouter, File, Form, Query, UploadFile, status
+
+from app.core.config import settings
+from app.core.db import TransactionSessionDep
+from app.core.exceptions import NotFoundException
+from app.core.utils.create_zip import create_zip
+from app.dao.person import PersonDAO
+from app.schemas import DataResponse, PaginatedListResponse, get_pagination
+from app.schemas.person import (
+    PersonCreate,
+    PersonFilter,
+    PersonFullRead,
+    PersonRead,
+    PersonUpdate,
+)
 
 router = APIRouter(
     prefix=settings.api.v1.persons,
     tags=["Persons"],
 )
+
 
 @router.post(
     "",
@@ -32,9 +35,8 @@ async def create_person(
     image: UploadFile = File(...),
     session=TransactionSessionDep,
 ):
-
     os.makedirs("storage/persons", exist_ok=True)
-    save_path = f"storage/persons/{uuid.uuid4()}.{image.filename.split(".")[-1]}"
+    save_path = f"storage/persons/{uuid.uuid4()}.{image.filename.split('.')[-1]}"
     with open(save_path, "wb") as buffer:
         buffer.write(await image.read())
 
@@ -49,6 +51,7 @@ async def create_person(
 
     return DataResponse(data=PersonRead.model_validate(person))
 
+
 @router.get(
     "/get_by_id/{person_id}",
     response_model=DataResponse[PersonFullRead],
@@ -59,7 +62,8 @@ async def get_person_by_id(
 ):
     person = await PersonDAO.get_person_by_id(session=session, person_id=person_id)
     return DataResponse(data=person)
-    
+
+
 @router.get(
     "/get_all",
     response_model=PaginatedListResponse[PersonRead],
@@ -95,20 +99,17 @@ async def get_persons(
         ),
     )
 
+
 @router.get(
     "/get_excel",
-    #response_model=DataResponse[List[PersonExcel]],
+    # response_model=DataResponse[List[PersonExcel]],
 )
 async def get_persons_excel(
     session=TransactionSessionDep,
 ):
     persons = await PersonDAO.get_persons_excel(session=session)
-    #path = await create_zip(persons_data=persons)
-    await task_queue.pool.enqueue_job(
-        "create_zip",
-        persons_data=persons,
-    )
-    return "ok"
+    path = await create_zip(persons_data=persons)
+    return path
 
 
 @router.delete(
@@ -138,6 +139,7 @@ async def delete_person(
 
     return DataResponse(data=person_id)
 
+
 @router.put(
     "/update/{person_id}",
     status_code=status.HTTP_200_OK,
@@ -156,7 +158,7 @@ async def update_person(
         raise NotFoundException(
             message="Person not found",
         )
-        
+
     await PersonDAO.update(
         session=session,
         filters=PersonFilter(
@@ -169,4 +171,3 @@ async def update_person(
         data_id=person_id,
     )
     return DataResponse(data=updated_person)
-    
