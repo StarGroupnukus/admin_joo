@@ -7,7 +7,7 @@ from app.models.departments import Department
 
 class DepartmentDAO(BaseDAO):
     model = Department
-
+    
     @classmethod
     async def get_role_id(cls, session: AsyncSession, department_id: int) -> int | None:
         query = select(cls.model.role_id).filter(cls.model.id == department_id)
@@ -16,3 +16,4 @@ class DepartmentDAO(BaseDAO):
         if record:
             return record
         return None
+        

@@ -1,3 +1,4 @@
+
 from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import Mapped, mapped_column
 
@@ -14,3 +15,4 @@ class Department(Base):
         ForeignKey("roles.id"),
         nullable=False,
     )
+    

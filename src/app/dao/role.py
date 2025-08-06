@@ -21,3 +21,5 @@ class RoleDAO(BaseDAO):
             ),
         )
         return role if role else None
+    
+    

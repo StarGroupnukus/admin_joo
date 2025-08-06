@@ -13,14 +13,12 @@ from app.schemas.role import RoleRead
 
 class PersonDAO(BaseDAO):
     model = Person
+    
 
     @classmethod
-    async def get_person_by_id(
-        cls, session: AsyncSession, person_id: int
-    ) -> PersonFullRead | None:
-        query = text(
-            """
-            SELECT
+    async def get_person_by_id(cls, session: AsyncSession, person_id: int) -> PersonFullRead | None:
+        query = text("""
+            SELECT 
                 p.id AS id,
                 p.first_name AS first_name,
                 p.last_name AS last_name,
@@ -33,8 +31,7 @@ class PersonDAO(BaseDAO):
             JOIN departments d ON p.department_id = d.id
             JOIN roles r ON d.role_id = r.id
             WHERE p.id = :person_id
-        """
-        )
+        """)
         result = await session.execute(query, {"person_id": person_id})
         record = result.mappings().first()
 
@@ -44,11 +41,7 @@ class PersonDAO(BaseDAO):
                 first_name=record["first_name"],
                 last_name=record["last_name"],
                 image_url=record["image_url"],
-                department=DepartmentRead(
-                    id=record["department_id"],
-                    role_id=record["role_id"],
-                    name=record["department_name"],
-                ),
+                department=DepartmentRead(id=record["department_id"], role_id=record["role_id"], name=record["department_name"]),
                 role=RoleRead(id=record["role_id"], name=record["role_name"]),
             )
         return None
@@ -57,7 +50,7 @@ class PersonDAO(BaseDAO):
     async def get_persons_excel(cls, session: AsyncSession) -> List[PersonExcel]:
         query = text(
             """
-            SELECT
+            SELECT 
                 p.id AS id,
                 p.first_name AS first_name,
                 p.last_name AS last_name,
@@ -72,18 +65,13 @@ class PersonDAO(BaseDAO):
         )
         result = await session.execute(query)
         records = result.mappings().all()
-        response = [
-            PersonExcel(
-                id=record["id"],
-                first_name=record["first_name"],
-                last_name=record["last_name"],
-                department=f"Agro/{record['role']}/{record['department']}",
-                image_url=record["image_url"],
-                created_at=record["created_at"].strftime("%Y/%m/%d %H:%M:%S"),
-                extented_at=(record["created_at"] + timedelta(days=365 * 10)).strftime(
-                    "%Y/%m/%d %H:%M:%S"
-                ),
-            )
-            for record in records
-        ]
+        response = [PersonExcel(
+            id=record["id"],
+            first_name=record["first_name"],
+            last_name=record["last_name"],
+            department=f'Agro/{record["role"].lower()}/{record["department"].upper()}',
+            image_url=record["image_url"],
+            created_at=record["created_at"].strftime("%Y/%m/%d %H:%M:%S"),
+            extented_at=(record["created_at"] + timedelta(days=365 * 10)).strftime("%Y/%m/%d %H:%M:%S"),
+        ) for record in records]
         return response

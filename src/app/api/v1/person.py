@@ -6,7 +6,7 @@ from fastapi import APIRouter, File, Form, Query, UploadFile, status
 from app.core.config import settings
 from app.core.db import TransactionSessionDep
 from app.core.exceptions import NotFoundException
-from app.core.utils.create_zip import create_zip
+from app.core.utils import task_queue
 from app.dao.person import PersonDAO
 from app.schemas import DataResponse, PaginatedListResponse, get_pagination
 from app.schemas.person import (
@@ -22,7 +22,6 @@ router = APIRouter(
     tags=["Persons"],
 )
 
-
 @router.post(
     "",
     status_code=status.HTTP_201_CREATED,
@@ -35,8 +34,9 @@ async def create_person(
     image: UploadFile = File(...),
     session=TransactionSessionDep,
 ):
+
     os.makedirs("storage/persons", exist_ok=True)
-    save_path = f"storage/persons/{uuid.uuid4()}.{image.filename.split('.')[-1]}"
+    save_path = f"storage/persons/{uuid.uuid4()}.{image.filename.split(".")[-1]}"
     with open(save_path, "wb") as buffer:
         buffer.write(await image.read())
 
@@ -51,7 +51,6 @@ async def create_person(
 
     return DataResponse(data=PersonRead.model_validate(person))
 
-
 @router.get(
     "/get_by_id/{person_id}",
     response_model=DataResponse[PersonFullRead],
@@ -61,9 +60,12 @@ async def get_person_by_id(
     session=TransactionSessionDep,
 ):
     person = await PersonDAO.get_person_by_id(session=session, person_id=person_id)
+    if person is None:
+        raise NotFoundException(
+            message="Person not found",
+        )
     return DataResponse(data=person)
-
-
+    
 @router.get(
     "/get_all",
     response_model=PaginatedListResponse[PersonRead],
@@ -99,17 +101,20 @@ async def get_persons(
         ),
     )
 
-
 @router.get(
     "/get_excel",
-    # response_model=DataResponse[List[PersonExcel]],
+    #response_model=DataResponse[List[PersonExcel]],
 )
 async def get_persons_excel(
     session=TransactionSessionDep,
 ):
     persons = await PersonDAO.get_persons_excel(session=session)
-    path = await create_zip(persons_data=persons)
-    return path
+    #path = await create_zip(persons_data=persons)
+    await task_queue.pool.enqueue_job(
+        "create_zip",
+        persons_data=persons,
+    )
+    return "ok"
 
 
 @router.delete(
@@ -139,7 +144,6 @@ async def delete_person(
 
     return DataResponse(data=person_id)
 
-
 @router.put(
     "/update/{person_id}",
     status_code=status.HTTP_200_OK,
@@ -158,7 +162,7 @@ async def update_person(
         raise NotFoundException(
             message="Person not found",
         )
-
+        
     await PersonDAO.update(
         session=session,
         filters=PersonFilter(
@@ -171,3 +175,4 @@ async def update_person(
         data_id=person_id,
     )
     return DataResponse(data=updated_person)
+    

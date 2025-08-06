@@ -1,3 +1,4 @@
+
 from pydantic import BaseModel
 
 from app.schemas.department import DepartmentRead
@@ -10,36 +11,31 @@ class PersonBase(BaseModel):
     image_url: str
     department_id: int
 
-
+    
 class PersonCreate(PersonBase):
     pass
 
+class PersonUpdate(PersonBase):
+    pass
 
 class PersonRead(PersonBase):
     id: int
-    # department: DepartmentRead
-
+    #department: DepartmentRead
+    
     class Config:
         from_attributes = True
 
-
 class PersonFilter(PersonBase):
-    id: int | None = None
-    first_name: str | None = None
-    last_name: str | None = None
-    image_url: str | None = None
-    department_id: int | None = None
-
+    id : int | None = None
+    first_name : str | None = None
+    last_name : str | None = None
+    image_url : str | None = None
+    department_id : int | None = None
 
 class PersonUpdate(PersonBase):
     first_name: str | None = None
     last_name: str | None = None
     department_id: int | None = None
-
-
-class PersonUpdateInternal(PersonBase):
-    image_url: str | None = None
-
 
 class PersonFullRead(BaseModel):
     id: int
@@ -49,7 +45,6 @@ class PersonFullRead(BaseModel):
     department: DepartmentRead
     role: RoleRead
 
-
 class PersonExcel(BaseModel):
     id: int
     first_name: str
@@ -58,7 +53,6 @@ class PersonExcel(BaseModel):
     department: str
     created_at: str
     extented_at: str
-
 
 class PersonImport(BaseModel):
     id: int

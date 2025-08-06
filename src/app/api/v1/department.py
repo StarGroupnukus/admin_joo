@@ -26,9 +26,8 @@ async def create_department(
         data=department,
     )
 
-
 @router.get(
-    "/get_all",
+    '/get_all',
     response_model=PaginatedListResponse[DepartmentRead],
 )
 async def get_departments(

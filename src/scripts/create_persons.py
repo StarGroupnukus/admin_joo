@@ -32,8 +32,8 @@ async def create_persons(session: AsyncSession) -> None:
                     id=person["person_id"],
                     first_name=person["first_name"],
                     last_name=person["last_name"],
-                    image_url=f"storage/persons/{person['image'].split('/')[-1]}",
-                    department_id=person["department_id"],
+                    image_url=f'storage/persons/{person["image"].split("/")[-1]}',
+                    department_id=person["department_id"]
                 ),
             )
 

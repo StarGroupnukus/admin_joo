@@ -70,7 +70,6 @@ class ApiV1Prefix(BaseModel):
     persons: str = "/persons"
     departments: str = "/departments"
 
-
 class ApiPrefix(BaseModel):
     prefix: str = "/api"
 
