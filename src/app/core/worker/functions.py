@@ -1,18 +1,19 @@
 import asyncio
 import logging
-import os
-import shutil
-from shutil import make_archive
-from typing import List
 
 import uvloop
 from arq.worker import Worker
 
-from app.core.config import SOURCE_DIR, settings
+from app.core.config import settings
 from app.core.db import db_helper
 from app.core.services.eskiz.eskiz_client import AsyncEskizClient
-from app.core.utils.create_zip import create_excel
 from app.schemas.person import PersonExcel
+from typing import List
+from shutil import make_archive
+import os
+import shutil
+from app.core.utils.create_zip import create_excel
+from app.core.config import SOURCE_DIR
 
 asyncio.set_event_loop_policy(uvloop.EventLoopPolicy())
 
@@ -22,17 +23,17 @@ logger = logging.getLogger(__name__)
 # -------- background tasks --------
 
 
-async def create_zip(ctx: Worker, persons_data: List[PersonExcel]):
+async def create_zip(
+    ctx: Worker,
+    persons_data: List[PersonExcel]):
     for person in persons_data:
         os.makedirs(f"{SOURCE_DIR}/storage/tmp", exist_ok=True)
         os.makedirs(f"{SOURCE_DIR}/storage/tmp/images", exist_ok=True)
         shutil.copyfile(
             person.image_url,
-            f"{SOURCE_DIR}/storage/tmp/images/{person.id}.{person.image_url.split('.')[-1]}",
+            f"{SOURCE_DIR}/storage/tmp/images/{person.first_name.upper()}+{person.last_name.upper()}_{person.id}.{person.image_url.split(".")[-1]}",
         )
-    await create_excel(
-        file_path=f"{SOURCE_DIR}/storage/tmp/person.xlsx", persons_data=persons_data
-    )
+    await create_excel(file_path=f"{SOURCE_DIR}/storage/tmp/person.xlsx", persons_data=persons_data)
     make_archive(f"{SOURCE_DIR}/storage/person", "zip", f"{SOURCE_DIR}/storage/tmp")
     shutil.rmtree(f"{SOURCE_DIR}/storage/tmp")
     return f"{SOURCE_DIR}/storage/person.zip"
