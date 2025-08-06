@@ -7,7 +7,6 @@ from app.core.config import settings
 from .functions import (
     create_zip,
     sample_background_task,
-    send_sms_task,
     shutdown,
     startup,
 )
@@ -16,7 +15,6 @@ from .functions import (
 class WorkerSettings:
     functions: ClassVar[list] = [
         sample_background_task,
-        send_sms_task,
         create_zip,
     ]
     # Настройка периодических задач

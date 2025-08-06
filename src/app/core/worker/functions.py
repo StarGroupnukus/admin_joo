@@ -10,7 +10,6 @@ from arq.worker import Worker
 
 from app.core.config import SOURCE_DIR, settings
 from app.core.db import db_helper
-from app.core.services.eskiz.eskiz_client import AsyncEskizClient
 from app.core.utils.create_zip import create_excel
 from app.schemas.person import PersonExcel
 
@@ -22,10 +21,46 @@ logger = logging.getLogger(__name__)
 # -------- background tasks --------
 
 
+async def create_zip(ctx: Worker, persons_data: List[PersonExcel]):
+    zip_path = f"{SOURCE_DIR}/storage/person.zip"
+    tmp_dir = f"{SOURCE_DIR}/storage/tmp"
+
+    # Удалить старый zip (если есть)
+    try:
+        os.remove(zip_path)
+    except FileNotFoundError:
+        pass
+
+    # Создать временные папки один раз
+    os.makedirs(f"{tmp_dir}/images", exist_ok=True)
+
+    # Скопировать изображения
+    for person in persons_data:
+        shutil.copyfile(
+            person.image_url,
+            f"{tmp_dir}/images/{person.first_name.upper()}+{person.last_name.upper()}_{person.id}.{person.image_url.split('.')[-1]}",
+        )
+
+    # Создать Excel
+    await create_excel(file_path=f"{tmp_dir}/person.xlsx", persons_data=persons_data)
+
+    # Создать ZIP-архив
+    make_archive(f"{SOURCE_DIR}/storage/person", "zip", tmp_dir)
+
+    # Удалить временные файлы
+    shutil.rmtree(tmp_dir)
+
+    return zip_path
+
+
 async def create_zip(
     ctx: Worker,
     persons_data: List[PersonExcel]):
     for person in persons_data:
+        try:
+            os.remove(f'{SOURCE_DIR}/storage/person.zip')
+        except FileNotFoundError:
+            pass
         os.makedirs(f"{SOURCE_DIR}/storage/tmp", exist_ok=True)
         os.makedirs(f"{SOURCE_DIR}/storage/tmp/images", exist_ok=True)
         shutil.copyfile(
@@ -48,34 +83,9 @@ async def sample_background_task(
     return f"SMS message{message} had been sent to {phone_number}"
 
 
-async def send_sms_task(
-    ctx: Worker,
-    phone_number: str,
-    message: str,
-):
-    try:
-        client: AsyncEskizClient = ctx["eskiz_client"]
-        result = await client.send_sms(phone_number, message)
-        return {
-            "status": "success",
-            "result": result.model_dump(),
-        }
-    except Exception as e:
-        return {
-            "status": "error",
-            "message": str(e),
-        }
-
-
 # -------- base functions --------
 async def startup(ctx: Worker) -> None:
     logging.info("Worker Started")
-    ctx["eskiz_client"] = AsyncEskizClient(
-        email=settings.eskiz.EMAIL,
-        password=settings.eskiz.PASSWORD,
-    )
-    # await ctx["eskiz_client"].login()
-
     ctx["session"] = await anext(db_helper.session_getter())
 
 
