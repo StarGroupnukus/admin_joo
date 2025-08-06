@@ -15,6 +15,7 @@ services:
       - ./src/alembic:/src/alembic
       - ./src/alembic.ini:/src/alembic.ini
       - /etc/localtime:/etc/localtime:ro
+      - ./src/storage:/src/storage
 #    command:
 #      - python
 #      - run_main.py
@@ -92,6 +93,7 @@ services:
       - ./src/.env:/src/.env
       - ./src/app:/src/app
       - /etc/localtime:/etc/localtime:ro
+      - ./src/storage:/src/storage
     networks:
       - admin_joo
         

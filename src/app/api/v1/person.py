@@ -1,5 +1,6 @@
 from fastapi import APIRouter
 from app.core.db import TransactionSessionDep
+from app.core.utils import task_queue
 from app.dao.person import PersonDAO
 from app.dao.department import DepartmentDAO
 from app.schemas.person import PersonCreate, PersonRead, PersonFullRead, PersonExcel, PersonUpdate
@@ -11,7 +12,6 @@ from app.core.exceptions import NotFoundException
 from app.schemas.person import PersonFilter
 from app.schemas import PaginatedListResponse, get_pagination
 import os
-from app.core.utils.create_zip import create_zip
 import uuid
 
 
@@ -103,8 +103,13 @@ async def get_persons_excel(
     session=TransactionSessionDep,
 ):
     persons = await PersonDAO.get_persons_excel(session=session)
-    path = await create_zip(persons_data=persons)
-    return path
+    #path = await create_zip(persons_data=persons)
+    await task_queue.pool.enqueue_job(
+        "create_zip",
+        persons_data=persons,
+    )
+    return "ok"
+
 
 @router.delete(
     "/delete/{person_id}",
