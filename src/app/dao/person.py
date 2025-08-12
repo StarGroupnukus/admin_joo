@@ -73,3 +73,32 @@ class PersonDAO(BaseDAO):
             extented_at=(record["created_at"] + timedelta(days=365 * 10)).strftime("%Y/%m/%d %H:%M:%S"),
         ) for record in records]
         return response
+
+    @classmethod
+    async def search(cls, session: AsyncSession, search: str) -> List[PersonFullRead]:
+        query = text("""
+            SELECT 
+                p.id AS id,
+                p.first_name AS first_name,
+                p.last_name AS last_name,
+                d.name AS department_name,
+                d.id AS department_id,
+                p.image_url AS image_url,
+                r.name AS role_name,
+                r.id AS role_id
+            FROM persons p
+            JOIN departments d ON p.department_id = d.id
+            JOIN roles r ON d.role_id = r.id
+            WHERE p.first_name || ' ' || p.last_name LIKE :search
+            """)
+        result = await session.execute(query, {"search": f"%{search}%"})
+        records = result.mappings().all()
+        response = [PersonFullRead(
+            id=record["id"],
+            first_name=record["first_name"],
+            last_name=record["last_name"],
+            department=DepartmentRead(id=record["department_id"], role_id=record["role_id"], name=record["department_name"]),
+            role=RoleRead(id=record["role_id"], name=record["role_name"]),
+            image_url=record["image_url"],
+        ) for record in records]
+        return response

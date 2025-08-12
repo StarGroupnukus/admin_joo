@@ -14,6 +14,7 @@ from app.schemas.person import (
     PersonRead,
     PersonUpdate,
 )
+from app.schemas.response import ListResponse
 
 router = APIRouter(
     prefix=settings.api.v1.persons,
@@ -174,3 +175,16 @@ async def update_person(
     )
     return DataResponse(data=updated_person)
     
+@router.get(
+    "/search/{search}",
+    response_model=ListResponse[PersonFullRead],
+)
+async def search_persons(
+    search: str,
+    session=TransactionSessionDep,
+):
+    persons = await PersonDAO.search(session=session, search=search)
+    return ListResponse(
+        data=persons,
+        total=len(persons),
+    )

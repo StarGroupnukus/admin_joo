@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from app.core.db import TransactionSessionDep
 from app.dao.department import DepartmentDAO
-from app.schemas.department import DepartmentCreate, DepartmentRead, DepartmentFilter
+from app.schemas.department import DepartmentCreate, DepartmentRead, DepartmentReadWithCount, DepartmentFilter
 from app.core.config import settings
 from app.schemas import DataResponse, PaginatedListResponse, get_pagination
 from fastapi import status, Query
@@ -28,7 +28,7 @@ async def create_department(
 
 @router.get(
     '/get_all',
-    response_model=PaginatedListResponse[DepartmentRead],
+    response_model=PaginatedListResponse[DepartmentReadWithCount],
 )
 async def get_departments(
     role_id: int | None = None,
@@ -42,15 +42,11 @@ async def get_departments(
             role_id=role_id,
         ),
     )
-    db_departments = await DepartmentDAO.paginate(
+    db_departments = await DepartmentDAO.get_departments_with_count(
         session=session,
-        filters=DepartmentFilter(
-            role_id=role_id,
-        ),
+        role_id=role_id,
         page=page,
         page_size=page_size,
-        order_by="id",
-        order_direction="desc",
     )
     return PaginatedListResponse(
         data=db_departments,
@@ -60,3 +56,4 @@ async def get_departments(
             page_size=page_size,
         ),
     )
+

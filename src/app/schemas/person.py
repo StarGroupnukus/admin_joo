@@ -29,6 +29,7 @@ class PersonFilter(PersonBase):
     department_id : int | None = None
 
 class PersonUpdate(PersonBase):
+    image_url: str | None = None
     first_name: str | None = None
     last_name: str | None = None
     department_id: int | None = None

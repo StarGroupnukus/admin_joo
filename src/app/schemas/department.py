@@ -25,3 +25,7 @@ class DepartmentRead(DepartmentBase):
 
     class Config:
         from_attributes = True
+
+class DepartmentReadWithCount(DepartmentRead):
+    count: int
+    
