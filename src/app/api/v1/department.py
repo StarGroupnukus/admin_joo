@@ -1,10 +1,12 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 from app.core.db import TransactionSessionDep
 from app.dao.department import DepartmentDAO
 from app.schemas.department import DepartmentCreate, DepartmentRead, DepartmentReadWithCount, DepartmentFilter
 from app.core.config import settings
 from app.schemas import DataResponse, PaginatedListResponse, get_pagination
 from fastapi import status, Query
+from app.api.dependencies.user import get_current_auth_user
+from app.schemas.user import UserRead
 
 router = APIRouter(
     prefix=settings.api.v1.departments,
@@ -20,6 +22,7 @@ router = APIRouter(
 async def create_department(
     department: DepartmentCreate,
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     department = await DepartmentDAO.add(session=session, values=department)
     return DataResponse(
@@ -35,6 +38,7 @@ async def get_departments(
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1),
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     db_departments_count = await DepartmentDAO.count(
         session=session,

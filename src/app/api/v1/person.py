@@ -1,4 +1,4 @@
-from fastapi import APIRouter, File, Form, Query, UploadFile, status
+from fastapi import APIRouter, File, Form, Query, UploadFile, status, Depends
 import os
 import uuid
 from app.core.config import settings
@@ -15,6 +15,8 @@ from app.schemas.person import (
     PersonUpdate,
 )
 from app.schemas.response import ListResponse
+from app.api.dependencies.user import get_current_auth_user
+from app.schemas.user import UserRead
 
 router = APIRouter(
     prefix=settings.api.v1.persons,
@@ -32,6 +34,7 @@ async def create_person(
     department_id: int = Form(...),
     image: UploadFile = File(...),
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
 
     os.makedirs("storage/persons", exist_ok=True)
@@ -57,6 +60,7 @@ async def create_person(
 async def get_person_by_id(
     person_id: int,
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     person = await PersonDAO.get_person_by_id(session=session, person_id=person_id)
     if person is None:
@@ -64,7 +68,7 @@ async def get_person_by_id(
             message="Person not found",
         )
     return DataResponse(data=person)
-    
+
 @router.get(
     "/get_all",
     response_model=PaginatedListResponse[PersonRead],
@@ -74,6 +78,7 @@ async def get_persons(
     page: int = Query(1, ge=1),
     page_size: int = Query(10, ge=1),
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     db_persons_count = await PersonDAO.count(
         session=session,
@@ -106,6 +111,7 @@ async def get_persons(
 )
 async def get_persons_excel(
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     persons = await PersonDAO.get_persons_excel(session=session)
     #path = await create_zip(persons_data=persons)
@@ -124,6 +130,7 @@ async def get_persons_excel(
 async def delete_person(
     person_id: int,
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     db_person = await PersonDAO.find_one_or_none_by_id(
         session=session,
@@ -152,6 +159,7 @@ async def update_person(
     person_id: int,
     update_data: PersonUpdate,
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     db_person = await PersonDAO.find_one_or_none_by_id(
         session=session,
@@ -174,14 +182,17 @@ async def update_person(
         data_id=person_id,
     )
     return DataResponse(data=updated_person)
-    
+
+
 @router.get(
     "/search/{search}",
     response_model=ListResponse[PersonFullRead],
+    
 )
 async def search_persons(
     search: str,
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     persons = await PersonDAO.search(session=session, search=search)
     return ListResponse(

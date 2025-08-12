@@ -1,4 +1,4 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends, status
 from app.core.db import TransactionSessionDep
 from app.core.exceptions import NotFoundException
 from app.dao.role import RoleDAO
@@ -6,7 +6,8 @@ from app.schemas.response import ListResponse
 from app.schemas.role import RoleCreate, RoleRead
 from app.core.config import settings
 from app.schemas import DataResponse
-from fastapi import status
+from app.api.dependencies.user import get_current_auth_user
+from app.schemas.user import UserRead
 
 router = APIRouter(
     prefix=settings.api.v1.roles,
@@ -22,6 +23,7 @@ router = APIRouter(
 async def create_role(
     role: RoleCreate,
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     role = await RoleDAO.add(session=session, values=role)
     return DataResponse(
@@ -34,6 +36,7 @@ async def create_role(
 )
 async def get_roles(
     session=TransactionSessionDep,
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     roles = await RoleDAO.find_all(
         session=session,
