@@ -7,6 +7,7 @@ from .department import router as department_router
 from .person import router as person_router
 from .role import router as role_router
 from .user import router as user_router
+from .feedback import router as feedback_router
 
 
 router = APIRouter(
@@ -31,7 +32,9 @@ router.include_router(
 router.include_router(
     department_router,
 )
-
+router.include_router(
+    feedback_router,
+)
 router.include_router(
     role_router,
 )
