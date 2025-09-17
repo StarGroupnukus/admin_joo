@@ -12,13 +12,25 @@ from app.schemas import DataResponse, PaginatedListResponse, get_pagination
 from fastapi import status, Query
 from app.api.dependencies.user import get_current_auth_user
 from app.schemas.user import UserRead
-
+import httpx
 from app.schemas.response import ListResponse
+from fastapi import Form
 
 router = APIRouter(
     prefix=settings.api.v1.feedback,
     tags=["feedback"],
 )
+SMARTCAPTCHA_SECRET = settings.crypt.CAPTCHA_SECRET
+
+
+async def verify_captcha(token: str) -> bool:
+    url = "https://smartcaptcha.yandexcloud.net/validate"
+    async with httpx.AsyncClient() as client:
+        resp = await client.post(
+            url, data={"secret": SMARTCAPTCHA_SECRET, "token": token}
+        )
+        data = resp.json()
+        return data.get("status") == "ok"
 
 
 @router.post("add_branch")
@@ -57,15 +69,18 @@ async def get_all_feedback(
         total=len(branches),
     )
 
-@router.post(
-    "add_feedback",
-    status_code=status.HTTP_201_CREATED,
-    response_model=DataResponse[BranchRead],
-)
+
+@router.post("/feedbackadd_feedback")
 async def add_feedback(
-    feedback: Feedback,
+    branch_id: int = Form(...),
+    rating: float = Form(...),
+    smart_token: str = Form(...),
     session=TransactionSessionDep,
 ):
+    if not await verify_captcha(smart_token):
+        raise HTTPException(status_code=400, detail="Captcha failed")
+
+    feedback = Feedback(branch_id=branch_id, rating=rating)
     branch = await BranchDAO.add_feedback(session=session, feedback=feedback)
     return DataResponse(
         data=branch,

@@ -89,6 +89,7 @@ class CryptSettings(BaseModel):
     REFRESH_TOKEN_HTTPONLY: bool = True
     REFRESH_TOKEN_COOKIE_SECURE: bool = True
     REFRESH_TOKEN_COOKIE_SAMESITE: str = "Lax"
+    CAPTCHA_SECRET: str = ""
 
 
 class RedisClient(BaseModel):
