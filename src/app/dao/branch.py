@@ -8,18 +8,19 @@ from sqlalchemy import select, text
 class BranchDAO(BaseDAO):
     model = Branch
 
+
     @classmethod
     async def get_all(cls, session: AsyncSession):
-        query = select(cls.model.id, cls.model.name, cls.model.rating, cls.model.voice_count)
+        query = select(cls.model)
         result = await session.execute(query)
-        return [BranchRead(**row) for row in result.scalars().all()]
-        
-    
+        branches = result.scalars().all()
+        return [BranchRead.model_validate(branch) for branch in branches]
+
     @classmethod
     async def add_feedback(cls, session: AsyncSession, feedback: Feedback) -> BranchRead:
         query = text(
             """
-            UPDATE branch
+            UPDATE branchs
             SET 
                 rating = (rating * voice_count + :new_rating) / (voice_count + 1),
                 voice_count = voice_count + 1

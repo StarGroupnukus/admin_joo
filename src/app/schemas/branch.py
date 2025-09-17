@@ -17,3 +17,7 @@ class BranchRead(BranchBase):
 class Feedback(BaseModel):
     branch_id: int
     rating: float
+
+class BranchFilter(BaseModel):
+    id : int | None = None
+    name : str | None = None
