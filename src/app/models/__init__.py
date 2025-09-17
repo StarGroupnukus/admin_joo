@@ -6,6 +6,7 @@ __all__ = (
     "Role",
     "Person",
     "Department",
+    "Branch",
 )
 
 from .base import Base
@@ -16,4 +17,4 @@ from .user import User
 from .roles import Role
 from .persons import Person
 from .departments import Department
-
+from .branch import Branch

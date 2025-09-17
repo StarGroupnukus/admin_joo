@@ -69,6 +69,7 @@ class ApiV1Prefix(BaseModel):
     roles: str = "/roles"
     persons: str = "/persons"
     departments: str = "/departments"
+    feedback: str = "/feedback"
 
 class ApiPrefix(BaseModel):
     prefix: str = "/api"
