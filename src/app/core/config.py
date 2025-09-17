@@ -156,9 +156,9 @@ class Settings(BaseSettings):
         env_prefix="APP__",
         env_nested_delimiter="__",
         env_file=(
-            SOURCE_DIR / ".env.template",
+            #SOURCE_DIR / ".env.template",
             SOURCE_DIR / ".env.dev",
-            SOURCE_DIR / ".env",
+            #SOURCE_DIR / ".env",
         ),
         extra="ignore",
     )

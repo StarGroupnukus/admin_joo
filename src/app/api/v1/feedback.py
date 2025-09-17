@@ -37,11 +37,17 @@ async def verify_captcha(token: str) -> bool:
 async def add_branch(
     branch: BranchCreate,
     session=TransactionSessionDep,
-    current_user: UserRead = Depends(get_current_auth_user),
+   # current_user: UserRead = Depends(get_current_auth_user),
 ):
     branch = await BranchDAO.add(session=session, values=branch)
     return DataResponse(
-        data=branch,
+        data=BranchRead(id=branch.id, name=branch.name,
+        rating_1_count=branch.rating_1_count,
+        rating_2_count=branch.rating_2_count,
+        rating_3_count=branch.rating_3_count,
+        rating_4_count=branch.rating_4_count,
+        rating_5_count=branch.rating_5_count,
+        rating=5),
     )
 
 @router.delete("delete_branch", status_code=status.HTTP_200_OK)
@@ -73,12 +79,12 @@ async def get_all_feedback(
 @router.post("/feedbackadd_feedback")
 async def add_feedback(
     branch_id: int = Form(...),
-    rating: float = Form(...),
+    rating: int = Form(ge=1, le=5),
     smart_token: str = Form(...),
     session=TransactionSessionDep,
 ):
-    if not await verify_captcha(smart_token):
-        raise HTTPException(status_code=400, detail="Captcha failed")
+    # if not await verify_captcha(smart_token):
+    #     raise HTTPException(status_code=400, detail="Captcha failed")
 
     feedback = Feedback(branch_id=branch_id, rating=rating)
     branch = await BranchDAO.add_feedback(session=session, feedback=feedback)
