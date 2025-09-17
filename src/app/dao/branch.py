@@ -20,7 +20,7 @@ class BranchDAO(BaseDAO):
     async def add_feedback(cls, session: AsyncSession, feedback: Feedback) -> BranchRead:
         query = text(
             """
-            UPDATE branchs
+            UPDATE branches
             SET 
                 rating = (rating * voice_count + :new_rating) / (voice_count + 1),
                 voice_count = voice_count + 1
