@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from pydantic.config import ConfigDict
 
 class BranchBase(BaseModel):
@@ -16,7 +16,7 @@ class BranchRead(BranchBase):
 
 class Feedback(BaseModel):
     branch_id: int
-    rating: float
+    rating: float = Field(ge=1, le=5)
 
 class BranchFilter(BaseModel):
     id : int | None = None
