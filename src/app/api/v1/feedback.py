@@ -37,7 +37,7 @@ async def verify_captcha(token: str) -> bool:
 async def add_branch(
     branch: BranchCreate,
     session=TransactionSessionDep,
-   # current_user: UserRead = Depends(get_current_auth_user),
+    current_user: UserRead = Depends(get_current_auth_user),
 ):
     branch = await BranchDAO.add(session=session, values=branch)
     return DataResponse(
@@ -83,8 +83,8 @@ async def add_feedback(
     smart_token: str = Form(...),
     session=TransactionSessionDep,
 ):
-    # if not await verify_captcha(smart_token):
-    #     raise HTTPException(status_code=400, detail="Captcha failed")
+    if not await verify_captcha(smart_token):
+        raise HTTPException(status_code=400, detail="Captcha failed")
 
     feedback = Feedback(branch_id=branch_id, rating=rating)
     branch = await BranchDAO.add_feedback(session=session, feedback=feedback)
