@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from pydantic.config import ConfigDict
 
+
 class BranchBase(BaseModel):
     name: str
 

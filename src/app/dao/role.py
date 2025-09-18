@@ -1,7 +1,9 @@
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.dao import BaseDAO
 from app.models.roles import Role
 from app.schemas.role import RoleFilter, RoleRead
+
 
 class RoleDAO(BaseDAO):
     model = Role

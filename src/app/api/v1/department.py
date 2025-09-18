@@ -1,11 +1,16 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, Query, status
+
+from app.api.dependencies.user import get_current_auth_user
+from app.core.config import settings
 from app.core.db import TransactionSessionDep
 from app.dao.department import DepartmentDAO
-from app.schemas.department import DepartmentCreate, DepartmentRead, DepartmentReadWithCount, DepartmentFilter
-from app.core.config import settings
 from app.schemas import DataResponse, PaginatedListResponse, get_pagination
-from fastapi import status, Query
-from app.api.dependencies.user import get_current_auth_user
+from app.schemas.department import (
+    DepartmentCreate,
+    DepartmentFilter,
+    DepartmentRead,
+    DepartmentReadWithCount,
+)
 from app.schemas.user import UserRead
 
 router = APIRouter(

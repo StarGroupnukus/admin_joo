@@ -1,8 +1,13 @@
+from sqlalchemy import select, text
 from sqlalchemy.ext.asyncio import AsyncSession
+
 from app.dao import BaseDAO
 from app.models.departments import Department
-from app.schemas.department import DepartmentFilter, DepartmentRead, DepartmentReadWithCount
-from sqlalchemy import select, text
+from app.schemas.department import (
+    DepartmentRead,
+    DepartmentReadWithCount,
+)
+
 
 class DepartmentDAO(BaseDAO):
     model = Department

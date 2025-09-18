@@ -1,7 +1,9 @@
+
 from pydantic import BaseModel
+
 from app.schemas.department import DepartmentRead
 from app.schemas.role import RoleRead
-from datetime import datetime
+
 
 class PersonBase(BaseModel):
     first_name: str

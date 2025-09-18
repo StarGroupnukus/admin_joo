@@ -1,10 +1,9 @@
 from sqlalchemy import text
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.schemas.branch import BranchRead
-from app.schemas.branch import Feedback
 from app.dao import BaseDAO
 from app.models.branch import Branch
+from app.schemas.branch import BranchRead, Feedback
 
 
 class BranchDAO(BaseDAO):

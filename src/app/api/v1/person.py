@@ -1,6 +1,9 @@
-from fastapi import APIRouter, File, Form, Query, UploadFile, status, Depends
 import os
 import uuid
+
+from fastapi import APIRouter, Depends, File, Form, Query, UploadFile, status
+
+from app.api.dependencies.user import get_current_auth_user
 from app.core.config import settings
 from app.core.db import TransactionSessionDep
 from app.core.exceptions import NotFoundException
@@ -15,7 +18,6 @@ from app.schemas.person import (
     PersonUpdate,
 )
 from app.schemas.response import ListResponse
-from app.api.dependencies.user import get_current_auth_user
 from app.schemas.user import UserRead
 
 router = APIRouter(

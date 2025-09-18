@@ -1,12 +1,13 @@
 from fastapi import APIRouter, Depends, status
+
+from app.api.dependencies.user import get_current_auth_user
+from app.core.config import settings
 from app.core.db import TransactionSessionDep
 from app.core.exceptions import NotFoundException
 from app.dao.role import RoleDAO
+from app.schemas import DataResponse
 from app.schemas.response import ListResponse
 from app.schemas.role import RoleCreate, RoleRead
-from app.core.config import settings
-from app.schemas import DataResponse
-from app.api.dependencies.user import get_current_auth_user
 from app.schemas.user import UserRead
 
 router = APIRouter(

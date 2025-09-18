@@ -1,6 +1,9 @@
 from typing import List
+
 import pandas as pd
+
 from app.schemas.person import PersonExcel
+
 
 async def create_excel(file_path: str, persons_data: List[PersonExcel]):
     data = [

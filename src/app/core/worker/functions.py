@@ -8,7 +8,7 @@ from typing import List
 import uvloop
 from arq.worker import Worker
 
-from app.core.config import SOURCE_DIR, settings
+from app.core.config import SOURCE_DIR
 from app.core.db import db_helper
 from app.core.utils.create_zip import create_excel
 from app.schemas.person import PersonExcel
