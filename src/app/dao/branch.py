@@ -21,6 +21,7 @@ class BranchDAO(BaseDAO):
                 rating_3_count,
                 rating_4_count,
                 rating_5_count,
+                (rating_1_count + rating_2_count + rating_3_count + rating_4_count + rating_5_count) AS votes_count,
                 CASE 
                     WHEN (rating_1_count + rating_2_count + rating_3_count + rating_4_count + rating_5_count) = 0 
                     THEN 0
@@ -36,6 +37,7 @@ class BranchDAO(BaseDAO):
                     )
                 END AS rating
             FROM branches
+            ORDER BY votes_count DESC
             """
         )
         result = await session.execute(query)
