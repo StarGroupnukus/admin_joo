@@ -38,7 +38,7 @@ async def create_department(
 @router.put(
     '/update/{department_id}',
     status_code=status.HTTP_200_OK,
-    response_model=DataResponse[DepartmentRead],
+    response_model=DataResponse[str],
 )
 async def update_department(
     department_id: int,
@@ -46,9 +46,9 @@ async def update_department(
     session=TransactionSessionDep,
     current_user: UserRead = Depends(get_current_auth_user),
 ):
-    department = await DepartmentDAO.update(session=session, filters=DepartmentFilter(id=department_id), values=department)
+    count = await DepartmentDAO.update(session=session, filters=DepartmentFilter(id=department_id), values=department)
     return DataResponse(
-        data=department,
+        data=f"Updated {count} rows",
     )
 
 @router.get(
