@@ -53,26 +53,6 @@ async def create_zip(ctx: Worker, persons_data: List[PersonExcel]):
     return zip_path
 
 
-async def create_zip(
-    ctx: Worker,
-    persons_data: List[PersonExcel]):
-    for person in persons_data:
-        try:
-            os.remove(f'{SOURCE_DIR}/storage/person.zip')
-        except FileNotFoundError:
-            pass
-        os.makedirs(f"{SOURCE_DIR}/storage/tmp", exist_ok=True)
-        os.makedirs(f"{SOURCE_DIR}/storage/tmp/images", exist_ok=True)
-        shutil.copyfile(
-            person.image_url,
-            f"{SOURCE_DIR}/storage/tmp/images/{person.first_name.upper()}+{person.last_name.upper()}_{person.id}.{person.image_url.split(".")[-1]}",
-        )
-    await create_excel(file_path=f"{SOURCE_DIR}/storage/tmp/person.xlsx", persons_data=persons_data)
-    make_archive(f"{SOURCE_DIR}/storage/person", "zip", f"{SOURCE_DIR}/storage/tmp")
-    shutil.rmtree(f"{SOURCE_DIR}/storage/tmp")
-    return f"{SOURCE_DIR}/storage/person.zip"
-
-
 async def sample_background_task(
     ctx: Worker,
     message: str = "Hello",

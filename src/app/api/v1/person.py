@@ -5,7 +5,7 @@ from fastapi import APIRouter, Depends, File, Form, Query, UploadFile, status
 
 from app.api.dependencies.user import get_current_auth_user
 from app.core.config import settings
-from app.core.db import TransactionSessionDep
+from app.core.db import TransactionSessionDep, SessionDep
 from app.core.exceptions import NotFoundException
 from app.core.utils import task_queue
 from app.dao.person import PersonDAO
@@ -112,7 +112,7 @@ async def get_persons(
     #response_model=DataResponse[List[PersonExcel]],
 )
 async def get_persons_excel(
-    session=TransactionSessionDep,
+    session=SessionDep,
     current_user: UserRead = Depends(get_current_auth_user),
 ):
     persons = await PersonDAO.get_persons_excel(session=session)
