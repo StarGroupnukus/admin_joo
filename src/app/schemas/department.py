@@ -1,24 +1,23 @@
-from pydantic import BaseModel
-
+from pydantic import BaseModel, Field
+from typing import Optional
 
 class DepartmentBase(BaseModel):
-    name: str
-
+    name: str = Field(..., max_length=64)
 
 class DepartmentCreate(DepartmentBase):
     role_id: int
 
 
-
 class DepartmentUpdate(DepartmentBase):
     role_id: int
 
-class DepartmentFilter(DepartmentBase):
-    id : int | None = None
-    name : str | None = None
-    role_id : int | None = None
 
-    
+class DepartmentFilter(BaseModel):
+    id: Optional[int] = None
+    name: Optional[str] = Field(None, max_length=64)
+    role_id: Optional[int] = None
+
+
 class DepartmentRead(DepartmentBase):
     id: int
     role_id: int
@@ -28,4 +27,3 @@ class DepartmentRead(DepartmentBase):
 
 class DepartmentReadWithCount(DepartmentRead):
     count: int
-    
