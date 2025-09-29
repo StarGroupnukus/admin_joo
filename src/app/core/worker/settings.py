@@ -32,6 +32,7 @@ class WorkerSettings:
         password=settings.redis_client.PASSWORD,
         host=settings.redis_client.HOST,
         port=settings.redis_client.PORT,
+        database=settings.redis_client.DB,
     )
     on_startup = startup
     on_shutdown = shutdown

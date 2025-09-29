@@ -96,7 +96,7 @@ class RedisClient(BaseModel):
     PASSWORD: str = ""
     HOST: str = "localhost"
     PORT: int = 6379
-
+    DB: int = 0
 
 class RedisCache(BaseModel):
     CACHE_EXPIRATION: int = 3600

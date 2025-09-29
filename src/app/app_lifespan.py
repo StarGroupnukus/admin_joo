@@ -32,7 +32,7 @@ async def drop_tables() -> None:
 async def create_redis_pool() -> None:
     try:
         redis_client.pool = ConnectionPool.from_url(
-            f"redis://:{settings.redis_client.PASSWORD}@{settings.redis_client.HOST}:{settings.redis_client.PORT}"
+            f"redis://:{settings.redis_client.PASSWORD}@{settings.redis_client.HOST}:{settings.redis_client.PORT}/{settings.redis_client.DB}"
         )
         redis_client.client = Redis(connection_pool=redis_client.pool)  # type: ignore
         await redis_client.client.ping()
@@ -53,6 +53,7 @@ async def create_redis_queue_pool() -> None:
             password=settings.redis_client.PASSWORD,
             host=settings.redis_client.HOST,
             port=settings.redis_client.PORT,
+            database=settings.redis_client.DB,
         )
     )
 
