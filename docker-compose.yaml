@@ -68,10 +68,6 @@ services:
   #     - admin_joo
   #     - infra_shared_network
 
-volumes:
-  pgdata:
-  redis-data:
-
 networks:
   admin_joo:
     driver: bridge
