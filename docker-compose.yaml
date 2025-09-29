@@ -5,9 +5,6 @@ services:
       context: ./
     ports:
       - "127.0.0.1:8013:8000"
-    depends_on:
-      pg:
-        condition: service_healthy
     volumes:
       - ./src:/src
       - ./src/.env:/src/.env
@@ -28,54 +25,8 @@ services:
     #       path: ./poetry.lock
     networks:
       - admin_joo
+      - infra_shared_network
 
-  pg:
-    image: postgres:16.4
-    env_file:
-      - ./src/.env
-    # ports:
-    #   - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-      - ./src/.env:/src/.env
-      - /etc/localtime:/etc/localtime:ro
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
-      interval: 5s
-      timeout: 3s
-      retries: 3
-    networks:
-      - admin_joo
-  redis:
-    image: redis:alpine
-    env_file:
-      - ./src/.env
-    volumes:
-      - redis-data:/data
-      - ./src/.env:/src/.env
-      - /etc/localtime:/etc/localtime:ro
-    # ports:
-    #   - "6379:6379"
-    healthcheck:
-      test: [ "CMD-SHELL", "redis-cli", "ping" ]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    networks:
-      - admin_joo
-
-  adminer:
-    image: adminer
-    environment:
-      - ADMINER_DEFAULT_SERVER=pg
-      - ADMINER_DESIGN=dracula
-    ports:
-      - "127.0.0.1:8432:8080"
-    depends_on:
-      pg:
-        condition: service_healthy
-    networks:
-      - admin_joo
 
   worker:
     build:
@@ -84,11 +35,6 @@ services:
     command: arq app.core.worker.settings.WorkerSettings
     env_file:
       - ./src/.env
-    depends_on:
-      pg:
-        condition: service_healthy
-      redis:
-        condition: service_healthy
     volumes:
       - ./src/.env:/src/.env
       - ./src/app:/src/app
@@ -96,18 +42,14 @@ services:
       - ./src/storage:/src/storage
     networks:
       - admin_joo
-        
+      - infra_shared_network
+
   # init_scripts:
   #   build:
   #     context: ./
   #     dockerfile: ./docker-build/app/Dockerfile
   #   env_file:
   #     - ./src/.env
-  #   depends_on:
-  #     pg:
-  #       condition: service_healthy
-  #     app:
-  #       condition: service_started
 
   #   volumes:
   #     - ./src:/src
@@ -124,6 +66,7 @@ services:
   #     "
   #   networks:
   #     - admin_joo
+  #     - infra_shared_network
 
 volumes:
   pgdata:
@@ -132,3 +75,6 @@ volumes:
 networks:
   admin_joo:
     driver: bridge
+  infra_shared_network:
+    external: true
+    

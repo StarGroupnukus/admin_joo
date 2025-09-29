@@ -29,6 +29,7 @@ class WorkerSettings:
         # ),
     ]
     redis_settings = RedisSettings(
+        password=settings.redis_client.PASSWORD,
         host=settings.redis_client.HOST,
         port=settings.redis_client.PORT,
     )

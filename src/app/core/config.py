@@ -93,6 +93,7 @@ class CryptSettings(BaseModel):
 
 
 class RedisClient(BaseModel):
+    PASSWORD: str = ""
     HOST: str = "localhost"
     PORT: int = 6379
 
